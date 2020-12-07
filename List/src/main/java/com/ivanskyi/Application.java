@@ -15,7 +15,7 @@ public class Application {
         application.initializationAndCompareSomeListsBySimilarValues();
         application.initializationAndDoDESCSortByComparator();
 
-        ArrayList<List> allList = new ArrayList<>();
+        List<List> setFromOtherType = new ArrayList<>();
         ListFunctional listLibrary = new ListFunctional();
 
         List LinkedListLittleSize = listLibrary.createLinkedList(10000);
@@ -25,20 +25,20 @@ public class Application {
         List ArrayListMiddleSize = listLibrary.createArrayList(100000);
         List ArrayListBigSize = listLibrary.createArrayList(500000);
 
-        allList.add(LinkedListLittleSize);
-        allList.add(LinkedListMiddleSize);
-        allList.add(LinkedListBigSize);
-        allList.add(ArrayListLittleSize);
-        allList.add(ArrayListMiddleSize);
-        allList.add(ArrayListBigSize);
+        setFromOtherType.add(LinkedListLittleSize);
+        setFromOtherType.add(LinkedListMiddleSize);
+        setFromOtherType.add(LinkedListBigSize);
+        setFromOtherType.add(ArrayListLittleSize);
+        setFromOtherType.add(ArrayListMiddleSize);
+        setFromOtherType.add(ArrayListBigSize);
 
-        for (int i = 0; i <allList.size() ; i++) {
-            listLibrary.addElement(0,allList.get(i));
-            listLibrary.addElement(allList.get(i).size()/2,allList.get(i));
-            listLibrary.addElement(allList.get(i).size()-1,allList.get(i));
-            listLibrary.deleteElemnt(0,allList.get(i));
-            listLibrary.deleteElemnt(allList.get(i).size()/2,allList.get(i));
-            listLibrary.deleteElemnt(allList.get(i).size()-1,allList.get(i));
+        for (int i = 0; i <setFromOtherType.size() ; i++) {
+            listLibrary.addElement(0,setFromOtherType.get(i));
+            listLibrary.addElement(setFromOtherType.get(i).size()/2,setFromOtherType.get(i));
+            listLibrary.addElement(setFromOtherType.get(i).size()-1,setFromOtherType.get(i));
+            listLibrary.deleteElemnt(0,setFromOtherType.get(i));
+            listLibrary.deleteElemnt(setFromOtherType.get(i).size()/2,setFromOtherType.get(i));
+            listLibrary.deleteElemnt(setFromOtherType.get(i).size()-1,setFromOtherType.get(i));
         }
     }
 
