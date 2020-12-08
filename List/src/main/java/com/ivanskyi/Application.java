@@ -10,7 +10,6 @@ public class Application {
     ListManager listManager = new ListManager();
 
     public static void main(String[] args) {
-
         Application application = new Application();
         application.initializationAndDeleteSomeNumbersFromList();
         application.initializationAndRenameSomeFruitsInList();
