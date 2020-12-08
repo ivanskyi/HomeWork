@@ -14,8 +14,6 @@ public class TestComparator implements Comparable<TestComparator>{
 
     @Override
     public String toString() {
-        return "TestComparator{" +
-                "firstArgument=" + firstArgument +
-                '}';
+        return " TestComparator{ " + " firstArgument= " + firstArgument + '}';
     }
 }

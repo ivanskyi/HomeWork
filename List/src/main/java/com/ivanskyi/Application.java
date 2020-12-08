@@ -6,39 +6,44 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Application {
+    List<List> arrayListAndLinkedList = new ArrayList<>();
+    ListManager listManager = new ListManager();
+
     public static void main(String[] args) {
 
         Application application = new Application();
-
         application.initializationAndDeleteSomeNumbersFromList();
         application.initializationAndRenameSomeFruitsInList();
         application.initializationAndCompareSomeListsBySimilarValues();
         application.initializationAndDoDESCSortByComparator();
+        application.createArrayListAndLinkedListWithOutputTimeForIt();
+        application.showTimePerformanceByAddAndDeleteOperationInLists();
+    }
 
-        List<List> setFromOtherType = new ArrayList<>();
-        ListFunctional listLibrary = new ListFunctional();
+    public void  createArrayListAndLinkedListWithOutputTimeForIt() {
+        List LinkedListLittleSize = listManager.createLinkedList(10000);
+        List LinkedListMiddleSize = listManager.createLinkedList(100000);
+        List LinkedListBigSize = listManager.createLinkedList(500000);
+        List ArrayListLittleSize = listManager.createArrayList(10000);
+        List ArrayListMiddleSize = listManager.createArrayList(100000);
+        List ArrayListBigSize = listManager.createArrayList(500000);
 
-        List LinkedListLittleSize = listLibrary.createLinkedList(10000);
-        List LinkedListMiddleSize = listLibrary.createLinkedList(100000);
-        List LinkedListBigSize= listLibrary.createLinkedList(500000);
-        List ArrayListLittleSize = listLibrary.createArrayList(10000);
-        List ArrayListMiddleSize = listLibrary.createArrayList(100000);
-        List ArrayListBigSize = listLibrary.createArrayList(500000);
+        arrayListAndLinkedList.add(LinkedListLittleSize);
+        arrayListAndLinkedList.add(LinkedListMiddleSize);
+        arrayListAndLinkedList.add(LinkedListBigSize);
+        arrayListAndLinkedList.add(ArrayListLittleSize);
+        arrayListAndLinkedList.add(ArrayListMiddleSize);
+        arrayListAndLinkedList.add(ArrayListBigSize);
+    }
 
-        setFromOtherType.add(LinkedListLittleSize);
-        setFromOtherType.add(LinkedListMiddleSize);
-        setFromOtherType.add(LinkedListBigSize);
-        setFromOtherType.add(ArrayListLittleSize);
-        setFromOtherType.add(ArrayListMiddleSize);
-        setFromOtherType.add(ArrayListBigSize);
-
-        for (int i = 0; i <setFromOtherType.size() ; i++) {
-            listLibrary.addElement(0,setFromOtherType.get(i));
-            listLibrary.addElement(setFromOtherType.get(i).size()/2,setFromOtherType.get(i));
-            listLibrary.addElement(setFromOtherType.get(i).size()-1,setFromOtherType.get(i));
-            listLibrary.deleteElemnt(0,setFromOtherType.get(i));
-            listLibrary.deleteElemnt(setFromOtherType.get(i).size()/2,setFromOtherType.get(i));
-            listLibrary.deleteElemnt(setFromOtherType.get(i).size()-1,setFromOtherType.get(i));
+    public void showTimePerformanceByAddAndDeleteOperationInLists() {
+        for (int i = 0; i < arrayListAndLinkedList.size(); i++) {
+            listManager.addElement(0, arrayListAndLinkedList.get(i));
+            listManager.addElement(arrayListAndLinkedList.get(i).size() / 2, arrayListAndLinkedList.get(i));
+            listManager.addElement(arrayListAndLinkedList.get(i).size() - 1, arrayListAndLinkedList.get(i));
+            listManager.deleteElement(0, arrayListAndLinkedList.get(i));
+            listManager.deleteElement(arrayListAndLinkedList.get(i).size() / 2, arrayListAndLinkedList.get(i));
+            listManager.deleteElement(arrayListAndLinkedList.get(i).size() - 1, arrayListAndLinkedList.get(i));
         }
     }
 
