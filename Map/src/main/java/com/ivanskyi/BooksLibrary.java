@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BooksLibrary {
+
     private final Map<Date, String> books = new HashMap<>();
     private final DateManager dateManager = new DateManager();
 
@@ -19,19 +20,16 @@ public class BooksLibrary {
     }
 
     public void getLibraryLogs() {
-        takeBook("Bino");
-        for (String book : books.values()){
-            System.out.println(book);
+        System.out.println("Taken books log from Library");
+        int count = 1;
+        for (Date date : books.keySet()){
+            System.out.println(count++ + " " + books.get(date) + " - " + date);
         }
     }
+
+    public String getBookNameByDate(String date) throws ParseException {
+        Date dateWhenBookWasTaken = dateManager.getDateByText(date);
+        return books.get(dateWhenBookWasTaken).isEmpty() ? "Book is not found " : books.get(dateWhenBookWasTaken) ;
+
+    }
 }
-
-
-
-
-
-
-
-
-
-

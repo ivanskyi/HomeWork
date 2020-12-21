@@ -12,29 +12,23 @@ public class Terminal {
     System.out.println(TextForInterface.MainMenu.getText());
 
     int userChoice = scanner.nextInt();
-
-    switch (userChoice){
-        case 1 :
-            System.out.println("Vuvid ");
-            booksLibrary.getLibraryLogs();
-            break;
-        case 2 :
-            System.out.println(TextForInterface.takeBookItem.getText());
-            String bookName = scanner.nextLine();
-            booksLibrary.takeBook(bookName);
-            break;
-        case 3 :
-            System.out.println("Get name by date");
-            break;
-        case 4 :
-            System.exit(0);
-            break;
-    }
+        switch (userChoice){
+            case 1 :
+                booksLibrary.getLibraryLogs();
+                break;
+          case 2 :
+              System.out.println(TextForInterface.takeBookItem.getText());
+              String bookName = scanner.nextLine();
+              booksLibrary.takeBook(bookName);
+              break;
+          case 3 :
+              System.out.println(TextForInterface.getBookNameByDate.getText());
+              String dateForGetBookName = scanner.nextLine();
+              System.out.println(booksLibrary.getBookNameByDate(dateForGetBookName));
+              break;
+           case 4 :
+               System.exit(0);
+               break;
+        }
     }
 }
-
-
-
-
-
-
