@@ -23,14 +23,11 @@ public class Application {
             }
         };
 
-        Set myTreeSet = new TreeSet<>(comparator);
-        myTreeSet.add(2);
-        myTreeSet.add(1);
-        myTreeSet.add(4);
-        myTreeSet.add(3);
-        myTreeSet.add(5);
-        myTreeSet.add(7);
-        myTreeSet.add(6);
+        Set<Integer> myTreeSet = new TreeSet<>(comparator);
+        int[] values = {2,1,4,3,5,7,6};
+        for(int value : values){
+            myTreeSet.add(value);
+        }
         System.out.println("After sort TreeSet we have following sequence of elements : " + myTreeSet);
     }
 }
