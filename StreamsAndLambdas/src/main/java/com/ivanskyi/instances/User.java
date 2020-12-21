@@ -2,12 +2,12 @@ package com.ivanskyi.instances;
 
 public class User {
     String email;
-    int loginDateDayAgo;
+    int loginDate;
     Team team;
 
     public User(String email, int loginDateDayAgo, Team team) {
         this.email = email;
-        this.loginDateDayAgo = this.loginDateDayAgo;
+        this.loginDate = this.loginDate;
         this.team = team;
     }
 
@@ -19,12 +19,12 @@ public class User {
         this.email = email;
     }
 
-    public int getLoginDateDayAgo() {
-        return loginDateDayAgo;
+    public int getLoginDate() {
+        return loginDate;
     }
 
-    public void setLoginDateDayAgo(int loginDateDayAgo) {
-        this.loginDateDayAgo = loginDateDayAgo;
+    public void setLoginDate(int loginDate) {
+        this.loginDate = loginDate;
     }
 
     public Team getTeam() {

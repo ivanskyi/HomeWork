@@ -1,9 +1,10 @@
 package com.ivanskyi;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleArrayList {
-    ArrayList<Integer> list = new ArrayList<>();
+    List<Integer> list = new ArrayList<>();
 
     public SimpleArrayList(int... values) {
         for(Integer value : values){
@@ -24,7 +25,7 @@ public class SimpleArrayList {
         }
     }
 
-    public ArrayList<Integer> getListWhereElementNotDivideOnThree() {
+    public List<Integer> getListWhereElementNotDivideOnThree() {
         this.deleteElementsWhichDivideOnThree();
         return list;
     }

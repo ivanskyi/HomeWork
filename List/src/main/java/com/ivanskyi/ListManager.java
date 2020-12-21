@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ListManager {
 
-    public List createArrayList(int range){
+    public List<Integer> createArrayList(int range){
         long start;
         long end;
         start = System.currentTimeMillis();
@@ -15,23 +15,23 @@ public class ListManager {
             mylist.add(i);
         }
         end = System.currentTimeMillis();
-        System.out.println(end-start + " - Is used time for create ArraList with  " + range + " range" );
+        System.out.println(end-start + " - Time which we used by create   " + range + " range" );
         return mylist;
     }
 
-    public List createLinkedList(int range){
+    public List<Integer> createLinkedList(int range){
         long start, end;
         start = System.currentTimeMillis();
-        List<Integer> mylist = new LinkedList<>();
+        List<Integer> myList = new LinkedList<>();
         for (int i = 0; i < range ; i++) {
-            mylist.add(i);
+            myList.add(i);
         }
         end = System.currentTimeMillis();
         System.out.println(end - start + " - Is used time for create LinkedList with  " + range + " range" );
-        return mylist;
+        return myList;
     }
 
-    public List addElement(int index, List myList){
+    public void addElement(int index, List<Integer> myList){
         long start, end;
         start = System.currentTimeMillis();
         myList.remove(index);
@@ -39,10 +39,9 @@ public class ListManager {
         long userTime = end - start;
         System.out.println("Time for add element in index : " + index + " inside " + myList.getClass().getSimpleName()
                 + " " + myList.size() + " is : " + userTime) ;
-        return myList;
     }
 
-    public List deleteElement(int index, List myList){
+    public void deleteElement(int index, List<Integer> myList){
         long start, end;
         start = System.currentTimeMillis();
         myList.set(index,54735678);
@@ -50,6 +49,5 @@ public class ListManager {
         long userTime = end - start;
         System.out.println("Time for delete element in index : " + index + " inside "
                 + myList.getClass().getSimpleName() + " " + myList.size() + " is : " + userTime) ;
-        return myList;
     }
 }

@@ -3,16 +3,15 @@ package com.ivanskyi.instances;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class StreamByUser {
 
     public static void main(String[] args) {
     List<User> users = buildUserList();
-        List<User> userStream = users.stream().filter(user -> user.getLoginDateDayAgo()<7).collect(Collectors.toList());
+        List<User> userStream = users.stream().filter(user -> user.getLoginDate()<7).collect(Collectors.toList());
 
 for(User user : users){
-    System.out.println(user.getLoginDateDayAgo());
+    System.out.println(user.getLoginDate());
     System.out.println(user.getEmail());
 }
 

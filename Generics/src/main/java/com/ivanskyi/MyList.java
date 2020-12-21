@@ -3,8 +3,8 @@ package com.ivanskyi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyList<T extends Number> {
-    List<T> list = new ArrayList<>();
+public class MyList<T extends Comparable> {
+    private  List<T> list = new ArrayList<>();
 
     public MyList() {}
 
@@ -12,8 +12,8 @@ public class MyList<T extends Number> {
         list.add(data);
     }
 
-    public T getList(int index) {
-        return list.get(index);
+    public List<T> getList() {
+        return list;
     }
 
     public List<T> sortInDecrease() {

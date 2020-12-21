@@ -1,9 +1,10 @@
 package com.ivanskyi;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Fruits {
-    ArrayList<String> fruits = new ArrayList<>();
+    List<String> fruits = new ArrayList<>();
 
     public Fruits(String... fruits) {
         for(String fruit : fruits){
@@ -15,22 +16,15 @@ public class Fruits {
         fruits.add(value);
     }
 
-    public String replaceOrangeToGrapefruit(){
-        String result= "";
+    public void replaceFruiteToAnotherFruite(String fruitWhichIs, String fruiteWhichWillBe){
         for (int i = 0; i <fruits.size() ; i++) {
-            if (fruits.get(i) == "Orange"){
-                fruits.set(i,"Grapefruit");
-                result = "We did replace";
-            }
-            else{
-                result = "Value not present";
+            if (fruits.get(i).equals(fruitWhichIs)){
+                fruits.set(i,fruiteWhichWillBe);
             }
         }
-        return result;
     }
 
-    public ArrayList<String> getFruitsWhereOrangeIsReplaceToGrapefruit(){
-        replaceOrangeToGrapefruit();
+    public List<String> getFruis(){
         return fruits;
     }
 }

@@ -2,18 +2,23 @@ package com.ivanskyi;
 
 public class Application {
     public static void main(String[] args) {
-        MyList<Integer> list = new MyList<>();
-        list.add(54);
-        list.add(33);
-        list.add(22);
-        list.add(44);
-        list.add(4);
-        list.add(65757);
-        list.add(23);
-        list.add(55);
-        list.add(23);
+        MyList<Integer> listWithNumber = new MyList<>();
+        MyList<String> listWithWords = new MyList<>();
+        listWithNumber.add(54);
+        listWithNumber.add(65757);
+        listWithNumber.add(23);
+        listWithNumber.add(55);
+        listWithNumber.add(23);
 
-        System.out.println("Max value : " + list.getMax());
-        System.out.println("Min value : " + list.getMin());
+        listWithWords.add("Hola");
+        listWithWords.add("Hello");
+        listWithWords.add("Pryvit");
+
+        for(String word : listWithWords.getList()){
+            System.out.println(word);
+        }
+
+        System.out.println("Max value : " + listWithNumber.getMax());
+        System.out.println("Min value : " + listWithNumber.getMin());
     }
 }

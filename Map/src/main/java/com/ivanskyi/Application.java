@@ -1,22 +1,26 @@
 package com.ivanskyi;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Application {
+
     public static void main(String[] args) throws ParseException {
+       Terminal terminal = new Terminal();
+       BooksLibrary booksLibrary = new BooksLibrary();
+        booksLibrary.takeBook("12-12-2012 21:32:12","Lito");
+        booksLibrary.takeBook("12-12-2012 21:32:14","PEs");
+        booksLibrary.takeBook("12-12-2012 21:32:43","Kit");
 
-        BookCollection bookCollection = new BookCollection();
-        BookDateManager bookDateManager = new BookDateManager();
+        booksLibrary.getLibraryLogs();
+/// add some book
 
-        bookCollection.addBook(bookDateManager.add("2020-05-04"),"Martin Iden");
-        bookCollection.addBook(bookDateManager.add("2016-07-25"),"Giperion");
-        bookCollection.addBook(bookDateManager.add("2018-03-19"),"Hobbit");
-        bookCollection.addBook(bookDateManager.add("2019-06-06"),"Пригоди Франчішко або як зробити із нічого муляж жирафа");
 
-        Scanner myScanner = new Scanner(System.in);
-        System.out.println("Введіть дату коли ви брали книгу. Дату слід прописати відповідно до шаблону [Рік-Місяць-День]");
-        String dateFromScanner = myScanner.nextLine();
-        System.out.println(bookCollection.getBooks(dateFromScanner));
+
+
+
+        terminal.start();
     }
 }
