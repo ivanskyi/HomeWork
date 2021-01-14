@@ -17,5 +17,5 @@ public class Application {
             calculateManager.parse(command);
             System.out.println(TextTemplate.RESULT_NOTIFICATION.getText() + calculateManager.getResult() + "\n");
         }
-   }
+    }
 }

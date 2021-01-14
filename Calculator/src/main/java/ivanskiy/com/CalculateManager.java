@@ -6,10 +6,8 @@ import java.util.List;
 public class CalculateManager {
     double resultOfTheCalculation = 0;
     String command;
-
     List<String> separatorsFromCommand = new ArrayList<>();
     List<Integer> numbersFromCommand = new ArrayList<>();
-
     public void parse(String command){
         this.command = command;
         String[] separators = {"+","-","*","/"};
@@ -30,7 +28,6 @@ public class CalculateManager {
             }
         }
     }
-
     public double getResult(){
         return resultOfTheCalculation;
     }
