@@ -1,21 +1,33 @@
 package ivanskiy.com;
 
-import org.w3c.dom.Text;
-
 import java.util.Scanner;
 
 public class Application {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         CalculateManager calculateManager = new CalculateManager();
+        ReversePolishNotationManager reversePolishNotation = new ReversePolishNotationManager();
+
         Scanner scanner = new Scanner(System.in);
-        String command;
         int status = 0;
-        while(status == 0){
-            System.out.println(TextTemplate.START_NOTIFICATION.getText());
-            command = scanner.nextLine();
-            calculateManager.parse(command);
-            System.out.println(TextTemplate.RESULT_NOTIFICATION.getText() + calculateManager.getResult() + "\n");
+        while(status == 0) {
+            System.out.println(TextTemplate.START_WINDOW_NOTIFICATION.getText());
+            int menuItemWhichIsChoicedFromUser = scanner.nextInt();
+
+            if (menuItemWhichIsChoicedFromUser == 2) {
+                System.exit(0);
+            }
+            System.out.println(TextTemplate.START_CALCULATOR_NOTIFICATION.getText());
+            String taskCommand = scanner.nextLine();
+
+                try{
+                    calculateManager.parse(taskCommand);
+                    System.out.println(reversePolishNotation.evaluate(calculateManager.getTaskCommandInReversePolishNotation()));
+                }
+                catch (Exception e) {
+                    System.out.println("Your data is invalid. Try write it againe");
+                    continue;
+                }
         }
     }
 }
