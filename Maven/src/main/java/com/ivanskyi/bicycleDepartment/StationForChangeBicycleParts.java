@@ -7,7 +7,7 @@ import com.ivanskyi.bicycleDepartment.bicycleParts.Wheels;
 public class StationForChangeBicycleParts {
     Bicycle bicycle;
 
-    public void addBicycle(Bicycle bicycle){
+    public void addBicycle(Bicycle bicycle) {
         this.bicycle = bicycle;
     }
 

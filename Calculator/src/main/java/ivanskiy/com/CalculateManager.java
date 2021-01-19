@@ -41,7 +41,6 @@ public class CalculateManager {
         }
 
         reversePolishNotation = reversePolishNotationBuffer.toString();
-
         return reversePolishNotation;
     }
 }

@@ -2,20 +2,22 @@ package com.ivanskyi.bicycleDepartment;
 
 import com.ivanskyi.bicycleDepartment.bicycleParts.*;
 
-public class Application {
-    public static void main(String[] args) {
-        StationForChangeBicycleParts stationForChangeBicycleParts = new StationForChangeBicycleParts();
-        BicycleFactory bicycleFactory = new BicycleFactory();
-        BicycleCreator bicycleCreator = new BicycleCreator(bicycleFactory);
+public class BicycleServiceReception {
+    StationForChangeBicycleParts stationForChangeBicycleParts = new StationForChangeBicycleParts();
+    BicycleFactory bicycleFactory = new BicycleFactory();
+    BicycleCreator bicycleCreator = new BicycleCreator(bicycleFactory);
+    Bicycle bicycle = bicycleCreator.orderBicycle(BicycleBrand.CANNONDALE);
 
-        Bicycle bicycle = bicycleCreator.orderBicycle(BicycleBrand.CANNONDALE);
+    public void createBicycle() {
         bicycle.setFrame(new Frame(FrameBrands.PINARELLO,FrameSize.BIG));
         bicycle.setRudder(new Rudder(RudderMaterial.TITANIUM));
         bicycle.setWheels(new Wheels(WheelBrands.SHIMANO,26));
-        System.out.println("Bicycle which we created");
+        System.out.println("\nBicycle which we created.");
         bicycle.getAllCharacteristics();
+    }
 
-        System.out.println("\nBicycle where we changed some parts");
+    public void changePartsInBicycle() {
+        System.out.println("\nBicycle where we changed some parts.");
         stationForChangeBicycleParts.addBicycle(bicycle);
         stationForChangeBicycleParts.replaceFrame(new Frame(FrameBrands.FELT,FrameSize.MIDDLE));
         stationForChangeBicycleParts.replaceRudder(new Rudder(RudderMaterial.STEEL));

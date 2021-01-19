@@ -5,9 +5,8 @@ import com.ivanskyi.bicycleDepartment.bicycleBrands.GT;
 import com.ivanskyi.bicycleDepartment.bicycleBrands.TREK;
 
 public class BicycleFactory {
-    public Bicycle createBicycle(BicycleBrand type){
+    public Bicycle createBicycle(BicycleBrand type) {
         Bicycle bicycle = null;
-
         switch (type){
             case GT:
                 bicycle = new GT();

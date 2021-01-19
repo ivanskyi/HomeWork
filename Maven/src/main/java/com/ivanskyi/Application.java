@@ -1,42 +1,25 @@
 package com.ivanskyi;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Map;
+import com.ivanskyi.bicycleDepartment.BicycleServiceReception;
+import com.ivanskyi.textAnalyser.AnalyserTextManager;
 
 public class Application {
-    /*
-    public static void main(String[] args ) throws FileNotFoundException {
 
-        FileContentReader fileContentReader = new FileContentReader("/home/oleh/song.txt");
+    public static Application application = new Application();
+    BicycleServiceReception bicycleServiceReception = new BicycleServiceReception();
+    AnalyserTextManager analyserTextManager = new AnalyserTextManager();
 
-        ArrayList<String> myWords = fileContentReader.getFileContents();
-        TextManager textManager = new TextManager(myWords);
-        textManager.addCensorshipWord("order");
-        textManager.addCensorshipWord("list");
-
-
-        System.out.println("All words count : " + textManager.getCountedAllWords());
-
-        System.out.println("Censorship counted : " + textManager.getCountedCensorshipWords());
-
-
-
-
-        for(String word : textManager.getAllCensorshipWordFromText()){
-            System.out.println(word);
-        }
-
-
-
-
-        System.out.println(textManager.getWordsRating());
-
-
-
-
+    public static void main(String[] args) {
+        application.initialAllService();
     }
 
-     */
+    public void initialAllService() {
+        System.out.println("Initial service for change parts in bicycle");
+        bicycleServiceReception.createBicycle();
+        bicycleServiceReception.changePartsInBicycle();
+
+        System.out.println("\nInitial service for text analysis");
+        analyserTextManager.setPathToTextFile("src/main/java/com/ivanskyi/textAnalyser/data.txt");
+        analyserTextManager.getTextParameters(analyserTextManager.readTextFile());
+    }
 }

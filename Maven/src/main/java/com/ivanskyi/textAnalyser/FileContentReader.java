@@ -1,4 +1,4 @@
-package com.ivanskyi;
+package com.ivanskyi.textAnalyser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,11 +13,11 @@ public class FileContentReader {
     }
 
     public ArrayList<String> getFileContents() throws FileNotFoundException {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         File file = new File(filepath);
         Scanner scanner = new Scanner(file);
         while (scanner.hasNext()) {
-            buffer.append(scanner.nextLine() + " ");
+            buffer.append(scanner.nextLine());
         }
         String fileContents = buffer.toString();
         String[] allWordsSplited = fileContents.split(" ");
@@ -26,7 +26,6 @@ public class FileContentReader {
                 allWords.add(word.trim().toLowerCase());
             }
         }
-
         return allWords;
     }
 }
