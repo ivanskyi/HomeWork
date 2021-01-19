@@ -19,22 +19,25 @@ public class AnalyserTextManager {
         try {
             myWords = fileContentReader.getFileContents();
         } catch (FileNotFoundException e){
-            System.out.println("File is not found. Please change path to file and restart application.");
+            System.out.println("File is not found. "
+                    + "Please change path to file and restart application.");
         }
        return myWords;
     }
-
-
 
     public void getTextParameters(List<String> allWords)  {
         TextManager textManager = new TextManager(allWords);
         textManager.addCensorshipWord("passenger");
         textManager.addCensorshipWord("hollow");
         System.out.println("\nHere is all text parameters : ");
-        System.out.println("Total number of words: " + textManager.getCountedAllWords());
-        System.out.println("The total number of censored words: " + textManager.getCountedCensorshipWords());
-        System.out.println("The total number of censorship words which we find in text and wrote in another array: "
+        System.out.println("Total number of words: "
+                + textManager.getCountedAllWords());
+        System.out.println("The total number of censored words: "
+                + textManager.getCountedCensorshipWords());
+        System.out.println("The total number of censorship words"
+                + " which we find in text and wrote in another array: "
                 + textManager.getAllCensorshipWordFromText().length);
-        System.out.println("The number of repetitions of each word in the text: \n" + textManager.getWordsRating());
+        System.out.println("The number of repetitions of "
+                + "each word in the text: \n" + textManager.getWordsRating());
     }
 }

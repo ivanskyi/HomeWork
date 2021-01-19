@@ -41,17 +41,17 @@ public class TextManager {
                 }
             }
         }
-       return censorshipWordsListfromText.toArray(new String[censorshipWordsListfromText.size()]);
+       return censorshipWordsListfromText
+               .toArray(new String[censorshipWordsListfromText.size()]);
     }
-
-
 
     public Map<String, Integer> getWordsRating() {
             for (int i = 0; i < wordsSet.size(); i++) {
                 wordsRating.put(wordsSet.get(i), 1);
                 for (int j = 1; j < wordsSet.size()-i; j++) {
-                    if (wordsSet.get(i).equals(wordsSet.get(j))) {
-                        wordsRating.put(wordsSet.get(i), wordsRating.get(wordsSet.get(i))+1);
+                    if ( wordsSet.get(i).equals(wordsSet.get(j)) ) {
+                        wordsRating.put(wordsSet.get(i), wordsRating
+                                .get(wordsSet.get(i))+1);
                     }
                 }
             }

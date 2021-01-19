@@ -6,7 +6,8 @@ import com.ivanskyi.textAnalyser.AnalyserTextManager;
 public class Application {
 
     public static Application application = new Application();
-    BicycleServiceReception bicycleServiceReception = new BicycleServiceReception();
+    BicycleServiceReception bicycleServiceReception
+            = new BicycleServiceReception();
     AnalyserTextManager analyserTextManager = new AnalyserTextManager();
 
     public static void main(String[] args) {
@@ -19,7 +20,10 @@ public class Application {
         bicycleServiceReception.changePartsInBicycle();
 
         System.out.println("\nInitial service for text analysis");
-        analyserTextManager.setPathToTextFile("src/main/java/com/ivanskyi/textAnalyser/data.txt");
-        analyserTextManager.getTextParameters(analyserTextManager.readTextFile());
+        analyserTextManager
+                .setPathToTextFile("src/main/java/com/"
+                        + "ivanskyi/textAnalyser/data.txt");
+        analyserTextManager
+                .getTextParameters(analyserTextManager.readTextFile());
     }
 }

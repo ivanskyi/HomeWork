@@ -1,8 +1,6 @@
 package com.ivanskyi.bicycleDepartment;
 
-import com.ivanskyi.bicycleDepartment.bicycleParts.Frame;
-import com.ivanskyi.bicycleDepartment.bicycleParts.Rudder;
-import com.ivanskyi.bicycleDepartment.bicycleParts.Wheels;
+import com.ivanskyi.bicycleDepartment.bicycleParts.*;
 
 public class Bicycle {
     BicycleBrand bicycleBrand;
@@ -27,11 +25,14 @@ public class Bicycle {
     }
 
     public void getAllCharacteristics() {
-           System.out.println("Bicycle Characteristics: " + "\nBrand : " + bicycleBrand
+           System.out.println("Bicycle Characteristics: "
+                   + "\nBrand : " + bicycleBrand
                    + "\nRudder material : " + rudder.getMaterial()
-                   + "\nWheels  brand : " + wheels.getWheelBrands() + ". " + "\nWheels  Size: "
+                   + "\nWheels  brand : " + wheels.getWheelBrands() + ". "
+                   + "\nWheels  Size: "
                    + wheels.getSizeInInch()
-                   + "\nFrame  brand: " + frame.getFrameBrands() + "\nFrame size : " + frame.getFrameSize()
+                   + "\nFrame  brand: " + frame.getFrameBrands()
+                   + "\nFrame size : " + frame.getFrameSize()
            );
     }
 }

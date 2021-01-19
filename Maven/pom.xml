@@ -33,6 +33,14 @@
       <version>8.38</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.puppycrawl.tools/checkstyle -->
+    <dependency>
+      <groupId>com.puppycrawl.tools</groupId>
+      <artifactId>checkstyle</artifactId>
+      <version>8.39</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
@@ -88,6 +96,6 @@
                   <target>8</target>
               </configuration>
           </plugin>
-      </plugins>
+       </plugins>
   </build>
 </project>
