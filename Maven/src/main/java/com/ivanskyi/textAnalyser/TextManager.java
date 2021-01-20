@@ -3,7 +3,7 @@ package com.ivanskyi.textAnalyser;
 import java.util.*;
 
 public class TextManager {
-    List<String> wordsSet;
+    private List<String> wordsSet;
     final private List<String> censorshipWordsSample = new ArrayList<>();
     final private List<String> censorshipWordsListfromText = new ArrayList<>();
 

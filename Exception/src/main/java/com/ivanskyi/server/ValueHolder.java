@@ -1,7 +1,7 @@
 package com.ivanskyi.server;
 
 public class ValueHolder {
-    String string;
+    private String string;
 
     public ValueHolder(String string) {
         if (!string.isEmpty()) {

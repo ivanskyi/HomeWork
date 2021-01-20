@@ -1,9 +1,9 @@
 package com.ivanskyi.server;
 
-import com.ivanskyi.exceptions.NoPolindromException;
+import com.ivanskyi.customExceptions.NoPolindromException;
 
 public class Polindrom {
-    String string;
+    private String string;
     public boolean detectPolindrom(String word) throws NoPolindromException {
         StringBuffer bufferWords = new StringBuffer(word);
         bufferWords.reverse();
@@ -11,7 +11,7 @@ public class Polindrom {
         if (word.equals(reverseWord)) {
             return true;
         }
-        else{
+        else {
             return false;
         }
     }
