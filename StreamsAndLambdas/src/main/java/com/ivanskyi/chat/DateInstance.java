@@ -1,4 +1,4 @@
-package com.ivanskyi.webChat;
+package com.ivanskyi.chat;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package com.ivanskyi.webChat;
+package com.ivanskyi.chat;
 
 public enum Team {
     PLUTONIAN,

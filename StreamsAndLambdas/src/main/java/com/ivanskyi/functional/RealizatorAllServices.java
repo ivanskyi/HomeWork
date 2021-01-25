@@ -1,15 +1,15 @@
-package com.ivanskyi.entertainmentEstablishment;
+package com.ivanskyi.functional;
 
 import com.ivanskyi.cinema.Movie;
 import com.ivanskyi.cinema.MovieGenre;
-import com.ivanskyi.customFunctionalInterfaces.MergererForNameWithSurname;
+import com.ivanskyi.interfaces.MergererForNameWithSurname;
 import com.ivanskyi.post.PackagingDepartment;
 import com.ivanskyi.post.Protector;
 import com.ivanskyi.post.Thing;
 import com.ivanskyi.post.ThingStatus;
-import com.ivanskyi.webChat.DateInstance;
-import com.ivanskyi.webChat.Team;
-import com.ivanskyi.webChat.User;
+import com.ivanskyi.chat.DateInstance;
+import com.ivanskyi.chat.Team;
+import com.ivanskyi.chat.User;
 
 import java.util.*;
 import java.util.stream.Collectors;

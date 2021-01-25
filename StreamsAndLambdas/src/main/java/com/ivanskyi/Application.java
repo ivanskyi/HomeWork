@@ -1,6 +1,6 @@
 package com.ivanskyi;
 
-import com.ivanskyi.entertainmentEstablishment.RealizatorAllServices;
+import com.ivanskyi.functional.RealizatorAllServices;
 
 public class Application {
     static private RealizatorAllServices realizatorAllServices =
