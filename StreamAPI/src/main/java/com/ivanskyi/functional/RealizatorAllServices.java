@@ -28,7 +28,7 @@ public class RealizatorAllServices {
         System.out.println("We concatenated name and surname "
                 + "use Lambda Expression."
                 + " And got this result : "
-                + fullName.merge("Oleh", "Sunmen") + "\n");
+                + fullName.merge("Jack", "Sunmen") + "\n");
     }
 
     public void doVisitorsManager() {
@@ -39,9 +39,13 @@ public class RealizatorAllServices {
         User third = new User("thid@user.com",
                 new DateInstance("21/01/2021"), Team.PLUTONIAN);
         User fourth = new User("fourth@user.com",
-                new DateInstance("01/01/2021"), Team.URANIAN);
+                new DateInstance("22/01/2021"), Team.URANIAN);
         User fiveth = new User("fiveth@user.com",
                 new DateInstance("22/01/2021"), Team.MARSIAN);
+        User sixth = new User("sixth@user.com",
+                new DateInstance("22/01/2021"), Team.URANIAN);
+        User seventh = new User("seventh@user.com",
+                new DateInstance("01/01/2021"), Team.URANIAN);
 
         List<User> users = new ArrayList<>();
         users.add(first);
@@ -49,12 +53,14 @@ public class RealizatorAllServices {
         users.add(third);
         users.add(fourth);
         users.add(fiveth);
+        users.add(sixth);
+        users.add(seventh);
 
         Date currentDate = new Date();
-        final long QTY_MS_IN_FIVE_DAYS = 604800000;
+        final long qtyMSInFiveDays = 604800000;
         Map<Team, List<User>> recentUsers = users.stream()
                 .filter(user -> currentDate.getTime() - user.getLoginDate()
-                        .getDate().getTime() < QTY_MS_IN_FIVE_DAYS)
+                        .getDate().getTime() < qtyMSInFiveDays)
                 .collect(Collectors.groupingBy(User::getTeam));
 
         System.out.println("Users which loginned in chat not late week ago."
@@ -70,27 +76,27 @@ public class RealizatorAllServices {
 
     public void doCinemaSimulator() {
         List<Movie> movies = new ArrayList<>();
-        final double LOW_COST_FOR_MOVIE = 1.99;
-        final double MIDDLE_COST_FOR_MOVIE = 1.99;
-        final double HIGH_COST_FOR_MOVIE = 1.99;
+        final double lessCostForMovie = 1.99;
+        final double middleCostForMovie = 1.99;
+        final double highCostForMovie = 1.99;
         movies.add(new Movie("American Factory",
-                MovieGenre.DOCUMENTARY_MOVIES, LOW_COST_FOR_MOVIE));
+                MovieGenre.DOCUMENTARY_MOVIES, lessCostForMovie));
         movies.add(new Movie("Tell Me Who I Am",
-                MovieGenre.DOCUMENTARY_MOVIES, HIGH_COST_FOR_MOVIE));
+                MovieGenre.DOCUMENTARY_MOVIES, highCostForMovie));
         movies.add(new Movie("A Life On Our Planet",
-                MovieGenre.COMEDY_MOVIE, MIDDLE_COST_FOR_MOVIE));
+                MovieGenre.COMEDY_MOVIE, middleCostForMovie));
         movies.add(new Movie("The Big Lebowski",
-                MovieGenre.DOCUMENTARY_MOVIES, LOW_COST_FOR_MOVIE));
+                MovieGenre.DOCUMENTARY_MOVIES, lessCostForMovie));
 
         List<Movie> movies2 = new ArrayList<>();
         movies.add(new Movie("Kiss the Ground",
-                MovieGenre.DOCUMENTARY_MOVIES, MIDDLE_COST_FOR_MOVIE));
+                MovieGenre.DOCUMENTARY_MOVIES, middleCostForMovie));
         movies.add(new Movie("13th",
-                MovieGenre.DOCUMENTARY_MOVIES, HIGH_COST_FOR_MOVIE));
+                MovieGenre.DOCUMENTARY_MOVIES, highCostForMovie));
         movies.add(new Movie("Life Of Brian",
-                MovieGenre.DOCUMENTARY_MOVIES, MIDDLE_COST_FOR_MOVIE));
+                MovieGenre.DOCUMENTARY_MOVIES, middleCostForMovie));
         movies.add(new Movie("The Hangover",
-                MovieGenre.COMEDY_MOVIE, HIGH_COST_FOR_MOVIE));
+                MovieGenre.COMEDY_MOVIE, highCostForMovie));
 
         List<List<Movie>> twoCollections = new ArrayList<>();
         twoCollections.add(movies);
@@ -119,15 +125,14 @@ public class RealizatorAllServices {
         }
     }
 
-
     public void doPostSimulator() {
         PackagingDepartment packagingDepartment = new PackagingDepartment();
-        final int QTY_THINGS_IN_BOX = 5;
+        final int qtyThingsInBox = 5;
         List<List<Thing>> fewBox = new ArrayList<>();
         List<Thing> firstBox = packagingDepartment
-                .getThingsCollection(QTY_THINGS_IN_BOX);
+                .getThingsCollection(qtyThingsInBox);
         List<Thing> secondBox = packagingDepartment
-                .getThingsCollection(QTY_THINGS_IN_BOX);
+                .getThingsCollection(qtyThingsInBox);
         fewBox.add(firstBox);
         fewBox.add(secondBox);
 

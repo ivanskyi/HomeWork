@@ -5,11 +5,12 @@ import java.util.List;
 import java.util.Random;
 
 public class PackagingDepartment {
+    Random random = new Random();
+    int randomNumber;
 
     public Thing getRandomThing() {
         Thing[] things = Thing.values();
-        Random random = new Random();
-        int randomNumber = random.nextInt(things.length);
+        randomNumber = random.nextInt(things.length);
         return things[randomNumber];
     }
 
