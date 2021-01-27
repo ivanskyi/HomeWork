@@ -5,8 +5,8 @@ import com.ivanskyi.text.AnalysisTeller;
 
 public class ServiceRealizator {
     static ServiceRealizator serviceRealizator = new ServiceRealizator();
-    private static BicycleServiceReception bicycleServiceReception
-            = new BicycleServiceReception();
+    private static BicycleServiceReception bicycleServiceReception =
+            new BicycleServiceReception();
     static private AnalysisTeller analysisTeller = new AnalysisTeller();
 
     static public void initialAllService() {

@@ -15,6 +15,7 @@ public class AnalysisTeller {
 
     public List<String> readTextFile() {
         fileContentReader = new FileContentReader(pathToFile);
+
         try {
             allWordsFromFile = fileContentReader.getFileContents();
         } catch (FileNotFoundException e) {
