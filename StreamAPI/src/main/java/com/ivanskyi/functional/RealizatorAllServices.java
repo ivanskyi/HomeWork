@@ -15,12 +15,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class RealizatorAllServices {
+    static RealizatorAllServices realizatorAllServices = new RealizatorAllServices();
 
-    public void startRealization() {
-        doCustomInterface();
-        doVisitorsManager();
-        doCinemaSimulator();
-        doPostSimulator();
+    public static void startRealization() {
+        realizatorAllServices.doCustomInterface();
+        realizatorAllServices.doVisitorsManager();
+        realizatorAllServices.doCinemaSimulator();
+        realizatorAllServices.doPostSimulator();
     }
 
     public void doCustomInterface() {

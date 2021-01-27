@@ -34,14 +34,8 @@ public class LibraryFunctional {
 
     public String getBookNameByDate(String date) {
         Date dateWhenBookWasTaken = dateManager.getDateHowText(date);
-        try {
-            return books.get(dateWhenBookWasTaken)
-                    .isEmpty() ? TextTamplates.LOG_WITH_TAKEN_BOOKS_IS_EMPTY
-                    .getText() : books.get(dateWhenBookWasTaken);
-        } catch (NullPointerException e) {
-            System.out.println(TextTamplates.NOT_FOUND_BOOK_BY_DATE_ERROR
-                    .getText());
-            return null;
-        }
+            return books.get(dateWhenBookWasTaken).isEmpty()
+                    ? TextTamplates.LOG_WITH_TAKEN_BOOKS_IS_EMPTY.getText()
+                    : books.get(dateWhenBookWasTaken);
     }
 }

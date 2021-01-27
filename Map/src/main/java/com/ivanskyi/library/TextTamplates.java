@@ -5,11 +5,9 @@ public enum TextTamplates {
     MAIN_MENU("\nPlease select the feature number which you want to use "
             + "\n1- watch library log, 2 -take book, 3 -get name by date,"
             + " 4- exit"),
-    TAKE_BOOK_ITEM("Please write book name"),
+    TAKE_BOOK_ITEM("Please write book name, which you want take and press Enter"),
     GET_BOOK_NAME_BY_DATE("For get book name, please write date when"
             + " you did take this book."),
-    PARSE_TEXT_TO_DATE_ERROR("We can't parse this text to date "),
-    NOT_FOUND_BOOK_BY_DATE_ERROR("Book is not found"),
     SEARCH_BOOKS_SUCCESS_RESULT("Below is list which include all"
             + " books ever taken"),
     LOG_WITH_TAKEN_BOOKS_IS_EMPTY("Log with taken books is empty"),
