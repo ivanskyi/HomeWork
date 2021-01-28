@@ -13,7 +13,8 @@ public class DateManager {
         try {
             return simpleDateFormat.parse(date);
         } catch (ParseException e) {
-            return null;
+            e.printStackTrace();
+            return new Date();
         }
     }
 

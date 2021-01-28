@@ -17,15 +17,12 @@ public class BicycleServiceReception {
         bicycle.getAllCharacteristics();
     }
 
-    public void changePartsInBicycle() {
+    public void changePartsInBicycle(Frame frame, Rudder rudder, Wheels wheels) {
         System.out.println("\nBicycle where we changed some parts.");
-        stationForChangeBicycleParts.addBicycle(bicycle);
-        stationForChangeBicycleParts
-                .replaceFrame(new Frame(FrameBrands.FELT,FrameSize.MIDDLE));
-        stationForChangeBicycleParts
-                .replaceRudder(new Rudder(RudderMaterial.STEEL));
-        stationForChangeBicycleParts
-                .replaceWheels(new Wheels(WheelBrands.ZIPP,27));
+       ///must delete / stationForChangeBicycleParts.addBicycle(bicycle);
+        stationForChangeBicycleParts.replaceFrame(bicycle,frame);
+        stationForChangeBicycleParts.replaceRudder(bicycle,rudder);
+        stationForChangeBicycleParts.replaceWheels(bicycle,wheels);
         bicycle.getAllCharacteristics();
     }
 }

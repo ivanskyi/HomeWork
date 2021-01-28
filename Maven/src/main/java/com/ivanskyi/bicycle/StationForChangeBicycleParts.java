@@ -5,21 +5,16 @@ import com.ivanskyi.bicycle.parts.Rudder;
 import com.ivanskyi.bicycle.parts.Wheels;
 
 public class StationForChangeBicycleParts {
-    Bicycle bicycle;
 
-    public void addBicycle(Bicycle bicycle) {
-        this.bicycle = bicycle;
-    }
-
-    public void replaceRudder(Rudder rudder) {
+    public void replaceRudder(Bicycle bicycle, Rudder rudder) {
         bicycle.setRudder(rudder);
     }
 
-    public void replaceWheels(Wheels wheels) {
+    public void replaceWheels(Bicycle bicycle, Wheels wheels) {
         bicycle.setWheels(wheels);
     }
 
-    public void replaceFrame(Frame frame) {
+    public void replaceFrame(Bicycle bicycle, Frame frame) {
         bicycle.setFrame(frame);
     }
 }

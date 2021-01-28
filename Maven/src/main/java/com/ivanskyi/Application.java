@@ -1,9 +1,9 @@
 package com.ivanskyi;
 
-import com.ivanskyi.functional.ServiceRealizator;
+import com.ivanskyi.functional.ServiceImplementer;
 
 public class Application {
     public static void main(String[] args) {
-        ServiceRealizator.initialAllService();
+        ServiceImplementer.initialAllService();
     }
 }

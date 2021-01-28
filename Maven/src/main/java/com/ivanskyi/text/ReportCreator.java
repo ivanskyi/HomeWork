@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnalysisTeller {
+public class ReportCreator {
     String pathToFile;
     private List<String> allWordsFromFile = new ArrayList<>();
     private FileContentReader fileContentReader;
@@ -25,7 +25,7 @@ public class AnalysisTeller {
     }
 
     public void getTextParameters(List<String> allWords) {
-        TextManager textManager = new TextManager(allWords);
+        TextHandler textManager = new TextHandler(allWords);
         textManager.addCensorshipWord("passenger");
         textManager.addCensorshipWord("hollow");
 
@@ -41,7 +41,13 @@ public class AnalysisTeller {
         }
 
         System.out.println(TextTamplate.WORDS_RATING_LIST.getText());
-        textManager.getWordsRating();
+
+        for (String word : textManager.getWordsRating().keySet()) {
+            System.out.println(TextTamplate.WORD_TEXT.getText()
+                    + word + TextTamplate.QUANTITY_REPEAT.getText()
+                    + textManager.getWordsRating().get(word)
+                    + TextTamplate.TIMES_WORD.getText());
+        }
     }
 }
 
