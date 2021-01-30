@@ -27,6 +27,7 @@ public class Cisco extends Thread {
         final String postRequest = "post";
         final String putRequest = "put";
         final String deleteRequest = "delete";
+        
         switch (typeRequest.getName()) {
             case getRequest : result = requestManager.get(value);
             break;
