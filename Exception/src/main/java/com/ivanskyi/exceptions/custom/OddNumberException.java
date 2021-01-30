@@ -1,4 +1,4 @@
-package com.ivanskyi.customExceptions;
+package com.ivanskyi.exceptions.custom;
 
 public class OddNumberException extends Exception {
     public OddNumberException(String message) {
