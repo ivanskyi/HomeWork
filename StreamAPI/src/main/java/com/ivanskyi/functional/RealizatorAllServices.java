@@ -1,5 +1,8 @@
 package com.ivanskyi.functional;
 
+import com.ivanskyi.chat.DateInstance;
+import com.ivanskyi.chat.Team;
+import com.ivanskyi.chat.User;
 import com.ivanskyi.cinema.Movie;
 import com.ivanskyi.cinema.MovieGenre;
 import com.ivanskyi.interfaces.MergererForNameWithSurname;
@@ -7,15 +10,12 @@ import com.ivanskyi.post.PackagingDepartment;
 import com.ivanskyi.post.Protector;
 import com.ivanskyi.post.Thing;
 import com.ivanskyi.post.ThingStatus;
-import com.ivanskyi.chat.DateInstance;
-import com.ivanskyi.chat.Team;
-import com.ivanskyi.chat.User;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class RealizatorAllServices {
-    static RealizatorAllServices realizatorAllServices = new RealizatorAllServices();
+    static RealizatorAllServices realizatorAllServices =
+            new RealizatorAllServices();
 
     public static void startRealization() {
         realizatorAllServices.doCustomInterface();
@@ -36,17 +36,17 @@ public class RealizatorAllServices {
         User first = new User("first@user.com",
                 new DateInstance("19/01/2021"), Team.URANIAN);
         User second = new User("second@user.com",
-                new DateInstance("21/01/2021"), Team.MARSIAN);
+                new DateInstance("29/01/2021"), Team.MARSIAN);
         User third = new User("thid@user.com",
                 new DateInstance("21/01/2021"), Team.PLUTONIAN);
         User fourth = new User("fourth@user.com",
                 new DateInstance("22/01/2021"), Team.URANIAN);
         User fiveth = new User("fiveth@user.com",
-                new DateInstance("22/01/2021"), Team.MARSIAN);
+                new DateInstance("28/01/2021"), Team.MARSIAN);
         User sixth = new User("sixth@user.com",
                 new DateInstance("22/01/2021"), Team.URANIAN);
         User seventh = new User("seventh@user.com",
-                new DateInstance("01/01/2021"), Team.URANIAN);
+                new DateInstance("30/01/2021"), Team.URANIAN);
 
         List<User> users = new ArrayList<>();
         users.add(first);
@@ -66,12 +66,15 @@ public class RealizatorAllServices {
 
         System.out.println("Users which loginned in chat not late week ago."
                 + " They is grouping by team : ");
+
         for (Team team : Team.values()) {
-            System.out.println("User team : " + team);
-            for (User user : recentUsers.get(team)) {
-                System.out.println(user.getEmail());
+            if (recentUsers.get(team) != null) {
+                System.out.println("User team : " + team);
+                for (User user : recentUsers.get(team)) {
+                    System.out.println(user.getEmail());
+                }
+                System.out.println("");
             }
-      System.out.println("");
         }
     }
 
@@ -147,9 +150,9 @@ public class RealizatorAllServices {
                 + "Ever box consist with few things."
                 + "\nBelow considered full list with protected things.");
 
-       for (Protector protector : fragileThings) {
-           System.out.println("Fragile thing which is in protector :"
-                   + protector.getThing().getName());
-       }
+        for (Protector protector : fragileThings) {
+            System.out.println("Fragile thing which is in protector :"
+                    + protector.getThing().getName());
+        }
     }
 }
