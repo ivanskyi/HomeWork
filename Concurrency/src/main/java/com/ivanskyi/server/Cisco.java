@@ -13,7 +13,7 @@ public class Cisco extends Thread {
 
     public void run() {
         try {
-            final int timeForRequestSleep = 1100;
+            final int timeForRequestSleep = 900;
             Thread.sleep(timeForRequestSleep);
             System.out.println(detectTypeRequest());
         } catch (InterruptedException e) {
