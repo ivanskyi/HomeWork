@@ -25,7 +25,7 @@ public class VertexIn2D {
         this.y = y;
     }
 
-    public double getDistance(VertexIn2D anotherVertex){
+    public double getDistance(VertexIn2D anotherVertex) {
         return Math.sqrt(Math.pow((x - anotherVertex.getX()), 2) + Math.pow((y - anotherVertex.getY()), 2));
     }
 }

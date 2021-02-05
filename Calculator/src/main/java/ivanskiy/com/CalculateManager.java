@@ -13,18 +13,18 @@ public class CalculateManager {
 
     public void parse(String command) {
         this.command = command;
-        String[] separators = {"+","-","*","/"};
+        String[] separators = {"+", "-", "*", "/"};
         String[] numberWithoutSigns = this.command.split("[-+*/=]");
 
-        for(String number : numberWithoutSigns) {
-          numbersFromCommand.add(Integer.parseInt(number));
+        for (String number : numberWithoutSigns) {
+            numbersFromCommand.add(Integer.parseInt(number));
         }
 
         char[] allSymbol = command.toCharArray();
 
         for (String separator : separators) {
-            for(char symbol : allSymbol) {
-                if(separator.charAt(0) == symbol) {
+            for (char symbol : allSymbol) {
+                if (separator.charAt(0) == symbol) {
                     separatorsFromCommand.add(String.valueOf(symbol));
                 }
             }
@@ -32,7 +32,7 @@ public class CalculateManager {
     }
 
     public String getTaskCommandInReversePolishNotation() {
-        for(Integer number : numbersFromCommand){
+        for (Integer number : numbersFromCommand) {
             reversePolishNotationBuffer.append(number + " ");
         }
 

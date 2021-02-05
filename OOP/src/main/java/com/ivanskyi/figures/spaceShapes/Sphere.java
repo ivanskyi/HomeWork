@@ -3,7 +3,7 @@ package com.ivanskyi.figures.spaceShapes;
 import com.ivanskyi.figures.planes.VertexIn2D;
 
 public class Sphere extends SpaceShape {
-double radius;
+    double radius;
 
     public Sphere(VertexIn2D firstVertix, double radius) {
         super(firstVertix);
@@ -12,11 +12,11 @@ double radius;
 
     @Override
     public double getArea() {
-        return 4 * Math.PI * Math.pow(radius,2);
+        return 4 * Math.PI * Math.pow(radius, 2);
     }
 
     @Override
     public double getVolume() {
-        return Math.PI * Math.pow(radius,3) * 4 / 3;
+        return Math.PI * Math.pow(radius, 3) * 4 / 3;
     }
 }

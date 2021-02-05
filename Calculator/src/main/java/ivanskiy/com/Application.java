@@ -10,7 +10,7 @@ public class Application {
 
         Scanner scanner = new Scanner(System.in);
         int status = 0;
-        while(status == 0) {
+        while (status == 0) {
             System.out.println(TextTemplate.START_WINDOW_NOTIFICATION.getText());
             int menuItemWhichIsChoicedFromUser = scanner.nextInt();
 
@@ -20,14 +20,13 @@ public class Application {
             System.out.println(TextTemplate.START_CALCULATOR_NOTIFICATION.getText());
             String taskCommand = scanner.nextLine();
 
-                try{
-                    calculateManager.parse(taskCommand);
-                    System.out.println(reversePolishNotation.evaluate(calculateManager.getTaskCommandInReversePolishNotation()));
-                }
-                catch (Exception e) {
-                    System.out.println("Your data is invalid. Try write it againe");
-                    continue;
-                }
+            try {
+                calculateManager.parse(taskCommand);
+                System.out.println(reversePolishNotation.evaluate(calculateManager.getTaskCommandInReversePolishNotation()));
+            } catch (Exception e) {
+                System.out.println("Your data is invalid. Try write it againe");
+                continue;
+            }
         }
     }
 }

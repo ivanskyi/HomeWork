@@ -14,13 +14,13 @@ public class ReversePolishNotationManager {
 
             for (char c : s.toCharArray()) {
                 if (c == ' ') {
-                    if (num != null){
+                    if (num != null) {
                         stack.push(num);
                         num = null;
                     }
                 } else if (isDigital(c)) {
                     int digit = c - '0';
-                    if(num == null){
+                    if (num == null) {
                         num = digit;
                     } else {
                         num = num * 10 + digit;
@@ -29,11 +29,11 @@ public class ReversePolishNotationManager {
                     Integer num2 = stack.pop();
                     Integer num1 = stack.pop();
 
-                    if( c == '+') {
+                    if (c == '+') {
                         stack.push(num1 + num2);
-                    } else if ( c == '-') {
+                    } else if (c == '-') {
                         stack.push(num1 - num2);
-                    } else if ( c == '*') {
+                    } else if (c == '*') {
                         stack.push(num1 * num2);
                     } else if (c == '/') {
                         stack.push(num1 / num2);

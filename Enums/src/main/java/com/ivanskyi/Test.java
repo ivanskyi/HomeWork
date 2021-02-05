@@ -3,7 +3,7 @@ package com.ivanskyi;
 public class Test {
     public static void main(String[] args) {
         Circle circle = new Circle();
-        System.out.println( circle.getArea(3));
+        System.out.println(circle.getArea(3));
 
         ClassForCountNewClass classForCountNewClass = new ClassForCountNewClass();
         ClassForCountNewClass classForCountNewClass1 = new ClassForCountNewClass();

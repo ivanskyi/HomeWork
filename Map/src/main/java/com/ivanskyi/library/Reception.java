@@ -18,7 +18,7 @@ public class Reception {
         final int searchBook = 3;
         final int closeProgram = 4;
 
-        while( userChoice > 0 || userChoice <= 4) {
+        while (userChoice > 0 || userChoice <= 4) {
             System.out.println(TextTamplates.MAIN_MENU.getText());
             userChoice = scanner.nextInt();
 

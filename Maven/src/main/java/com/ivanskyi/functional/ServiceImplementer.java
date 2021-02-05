@@ -18,7 +18,6 @@ public class ServiceImplementer {
         serviceRealizator.bicycleServiceReception.createBicycle();
 
 
-
         bicycleServiceReception.changePartsInBicycle(frame, rudder, wheels);
         analysisTeller.setPathToFile("src/main/java/com/ivanskyi/text/data.txt");
         analysisTeller.getTextParameters(analysisTeller.readTextFile());

@@ -5,9 +5,9 @@ import com.ivanskyi.figures.planes.VertexIn2D;
 import com.ivanskyi.interfaces.PerimeterMeasurable;
 
 public class PlaneShape extends Shape implements PerimeterMeasurable {
-VertexIn2D firstVertex;
+    VertexIn2D firstVertex;
 
-    PlaneShape(VertexIn2D firstVertex){
+    PlaneShape(VertexIn2D firstVertex) {
         this.firstVertex = firstVertex;
     }
 
@@ -23,7 +23,7 @@ VertexIn2D firstVertex;
 
     public String toString() {
         String name = "Figure have name : " + this.getClass().getSimpleName();
-        String perimeter = "This is perimeter for this figure : "  + this.getPerimeter();
+        String perimeter = "This is perimeter for this figure : " + this.getPerimeter();
         String area = "This is area for this figure : " + this.getArea();
         String threeStar = " * * * ";
         return name + "\n" + perimeter + "\n" + area + "\n" + threeStar;

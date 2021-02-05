@@ -1,6 +1,7 @@
 package com.ivanskyi.club;
 
 import com.ivanskyi.club.commands.SortByPairsAndGrowth;
+
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -20,7 +21,7 @@ public class FootballTeam {
 
         System.out.println("Sorted result : ");
 
-        for(Integer number : footballPlayer) {
+        for (Integer number : footballPlayer) {
             System.out.print(number + " ");
         }
     }

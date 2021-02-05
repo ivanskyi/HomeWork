@@ -4,7 +4,8 @@ import java.util.List;
 
 public class Libra {
     String result = "";
-    public String discoverIfListHaveSimilarValues (List<?> firstList, List<?> secondList ){
+
+    public String discoverIfListHaveSimilarValues(List<?> firstList, List<?> secondList) {
         for (Object o : firstList) {
             for (Object value : secondList) {
                 if (o == value) {

@@ -16,7 +16,7 @@ public class Calculator {
         data[3] = myDouble;
         data[4] = myFloat;
 
-        for (int i = 0; i <data.length ; i++) {
+        for (int i = 0; i < data.length; i++) {
             for (int j = 0; j < data.length; j++) {
                 machineForProcessNumbers.setValues(data[i], data[j]);
                 machineForProcessNumbers.getAllOperationsResult();
@@ -25,36 +25,36 @@ public class Calculator {
     }
 }
 
-class MachineForProcessNumbers{
-   double firstValue;
-   double secondValue;
-   String firstValueType;
-   String secondValueType;
+class MachineForProcessNumbers {
+    double firstValue;
+    double secondValue;
+    String firstValueType;
+    String secondValueType;
 
-    public void setValues(Object  firstValue, Object secondValue) {
-            this.firstValue = (double)new Double(firstValue.toString());
-            this.secondValue = (double)new Double(secondValue.toString());
-            this.firstValueType = firstValue.getClass().getSimpleName();
-            this.secondValueType = secondValue.getClass().getSimpleName();
+    public void setValues(Object firstValue, Object secondValue) {
+        this.firstValue = (double) new Double(firstValue.toString());
+        this.secondValue = (double) new Double(secondValue.toString());
+        this.firstValueType = firstValue.getClass().getSimpleName();
+        this.secondValueType = secondValue.getClass().getSimpleName();
     }
 
-    public double getSum(){
+    public double getSum() {
         return firstValue + secondValue;
     }
 
-    public double getMultiplication(){
+    public double getMultiplication() {
         return firstValue * secondValue;
     }
 
-    public double getDivision(){
+    public double getDivision() {
         return firstValue / secondValue;
     }
 
-    public double getSubtraction(){
+    public double getSubtraction() {
         return firstValue - secondValue;
     }
 
-    public void getAllOperationsResult(){
+    public void getAllOperationsResult() {
         System.out.println(firstValueType + " " + firstValue + " + " + secondValueType + " " + secondValue
                 + " = " + this.getSum());
         System.out.println(firstValueType + " " + firstValue + " * " + secondValueType + " " + secondValue

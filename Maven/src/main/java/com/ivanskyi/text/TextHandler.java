@@ -27,11 +27,11 @@ public class TextHandler {
     public int getCountedCensorshipWords() {
         int censorshipCount = 0;
         for (String word : allWordsFromFile) {
-                for (String censorshipWord : censorshipCheckList) {
-                    if (censorshipWord.equals(word)) {
-                        censorshipCount++;
-                    }
+            for (String censorshipWord : censorshipCheckList) {
+                if (censorshipWord.equals(word)) {
+                    censorshipCount++;
                 }
+            }
         }
         return censorshipCount;
     }
@@ -39,11 +39,11 @@ public class TextHandler {
 
     public String[] getAllCensorshipWordFromText() {
         for (String word : allWordsFromFile) {
-                for (String censorshipWord : censorshipCheckList) {
-                    if (censorshipWord.equals(word)) {
-                        censorshipWordsWhichFoundInText.add(censorshipWord);
-                    }
+            for (String censorshipWord : censorshipCheckList) {
+                if (censorshipWord.equals(word)) {
+                    censorshipWordsWhichFoundInText.add(censorshipWord);
                 }
+            }
         }
         return censorshipWordsWhichFoundInText
                 .toArray(new String[censorshipWordsWhichFoundInText.size()]);
@@ -51,7 +51,7 @@ public class TextHandler {
 
     public Map<String, Integer> getWordsRating() {
         wordsFrequency = allWordsFromFile.stream()
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e ->1)));
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e -> 1)));
         return wordsFrequency;
     }
 }

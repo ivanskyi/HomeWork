@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/cinema/Movie.java">
+        <error line="1" severity="error" message="Missing package-info.java file."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+        <error line="4" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="5" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="6" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="8" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="8" column="18" severity="error" message="Parameter name should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="8" column="25" severity="error" message="&apos;name&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="8" column="31" severity="error" message="Parameter movieGenre should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="8" column="42" severity="error" message="&apos;movieGenre&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="8" column="54" severity="error" message="Parameter price should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="8" column="61" severity="error" message="&apos;price&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="14" column="5" severity="error"
+               message="Class &apos;Movie&apos; looks like designed for extension (can be subclassed), but the method &apos;getName&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Movie&apos; final or making the method &apos;getName&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="14" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="18" column="5" severity="error"
+               message="Class &apos;Movie&apos; looks like designed for extension (can be subclassed), but the method &apos;setName&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Movie&apos; final or making the method &apos;setName&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="18" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="18" column="25" severity="error" message="Parameter name should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="18" column="32" severity="error" message="&apos;name&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="22" column="5" severity="error"
+               message="Class &apos;Movie&apos; looks like designed for extension (can be subclassed), but the method &apos;getMovieGenre&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Movie&apos; final or making the method &apos;getMovieGenre&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="22" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="26" column="5" severity="error"
+               message="Class &apos;Movie&apos; looks like designed for extension (can be subclassed), but the method &apos;setMovieGenre&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Movie&apos; final or making the method &apos;setMovieGenre&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="26" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="26" column="31" severity="error" message="Parameter movieGenre should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="26" column="42" severity="error" message="&apos;movieGenre&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="30" column="5" severity="error"
+               message="Class &apos;Movie&apos; looks like designed for extension (can be subclassed), but the method &apos;getPrice&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Movie&apos; final or making the method &apos;getPrice&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="30" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="34" column="5" severity="error"
+               message="Class &apos;Movie&apos; looks like designed for extension (can be subclassed), but the method &apos;setPrice&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Movie&apos; final or making the method &apos;setPrice&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="34" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="34" column="26" severity="error" message="Parameter price should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="34" column="33" severity="error" message="&apos;price&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/cinema/MovieGenre.java">
+        <error line="4" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="5" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="7" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="7" column="12" severity="error"
+               message="Variable &apos;name&apos; must be private and have accessor methods."
+               source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
+        <error line="9" column="16" severity="error" message="Parameter name should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="9" column="23" severity="error" message="&apos;name&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="13" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/chat/Team.java">
+        <error line="1" severity="error" message="Missing package-info.java file."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+        <error line="4" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="5" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="6" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/chat/DateInstance.java">
+        <error line="8" severity="error" message="Line is longer than 80 characters (found 83)."
+               source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+        <error line="8" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="9" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="11" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="11" column="25" severity="error" message="Parameter dateLine should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="19" column="5" severity="error"
+               message="Class &apos;DateInstance&apos; looks like designed for extension (can be subclassed), but the method &apos;getDate&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;DateInstance&apos; final or making the method &apos;getDate&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="19" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/chat/User.java">
+        <error line="4" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="5" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="6" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="8" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="8" column="17" severity="error" message="Parameter email should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="8" column="24" severity="error" message="&apos;email&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="8" column="31" severity="error" message="Parameter loginDate should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="8" column="44" severity="error" message="&apos;loginDate&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="8" column="55" severity="error" message="Parameter team should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="8" column="60" severity="error" message="&apos;team&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="14" column="5" severity="error"
+               message="Class &apos;User&apos; looks like designed for extension (can be subclassed), but the method &apos;getEmail&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;User&apos; final or making the method &apos;getEmail&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="14" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="18" column="5" severity="error"
+               message="Class &apos;User&apos; looks like designed for extension (can be subclassed), but the method &apos;setEmail&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;User&apos; final or making the method &apos;setEmail&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="18" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="18" column="26" severity="error" message="Parameter email should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="18" column="33" severity="error" message="&apos;email&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="22" column="5" severity="error"
+               message="Class &apos;User&apos; looks like designed for extension (can be subclassed), but the method &apos;getLoginDate&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;User&apos; final or making the method &apos;getLoginDate&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="22" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="26" column="5" severity="error"
+               message="Class &apos;User&apos; looks like designed for extension (can be subclassed), but the method &apos;setLoginDate&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;User&apos; final or making the method &apos;setLoginDate&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="26" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="26" column="30" severity="error" message="Parameter loginDate should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="26" column="43" severity="error" message="&apos;loginDate&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="30" column="5" severity="error"
+               message="Class &apos;User&apos; looks like designed for extension (can be subclassed), but the method &apos;getTeam&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;User&apos; final or making the method &apos;getTeam&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="30" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="34" column="5" severity="error"
+               message="Class &apos;User&apos; looks like designed for extension (can be subclassed), but the method &apos;setTeam&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;User&apos; final or making the method &apos;setTeam&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="34" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="34" column="25" severity="error" message="Parameter team should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="34" column="30" severity="error" message="&apos;team&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="38" column="5" severity="error"
+               message="Class &apos;User&apos; looks like designed for extension (can be subclassed), but the method &apos;toString&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;User&apos; final or making the method &apos;toString&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/functional/RealizatorAllServices.java">
+        <error line="1" severity="error" message="Missing package-info.java file."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+        <error line="13" severity="error"
+               message="Using the &apos;.*&apos; form of import should be avoided - java.util.*."
+               source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+        <error line="17" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="17" column="34" severity="error"
+               message="Variable &apos;realizatorAllServices&apos; must be private and have accessor methods."
+               source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
+        <error line="20" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="27" column="5" severity="error"
+               message="Class &apos;RealizatorAllServices&apos; looks like designed for extension (can be subclassed), but the method &apos;doCustomInterface&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;RealizatorAllServices&apos; final or making the method &apos;doCustomInterface&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="27" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="35" column="5" severity="error"
+               message="Class &apos;RealizatorAllServices&apos; looks like designed for extension (can be subclassed), but the method &apos;doVisitorsManager&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;RealizatorAllServices&apos; final or making the method &apos;doVisitorsManager&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="35" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="81" column="5" severity="error"
+               message="Class &apos;RealizatorAllServices&apos; looks like designed for extension (can be subclassed), but the method &apos;doCinemaSimulator&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;RealizatorAllServices&apos; final or making the method &apos;doCinemaSimulator&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="81" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="132" column="5" severity="error"
+               message="Class &apos;RealizatorAllServices&apos; looks like designed for extension (can be subclassed), but the method &apos;doPostSimulator&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;RealizatorAllServices&apos; final or making the method &apos;doPostSimulator&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="132" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/interfaces/MergererForNameWithSurname.java">
+        <error line="1" severity="error" message="Missing package-info.java file."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+        <error line="4" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="4" column="5" severity="error" message="Redundant &apos;public&apos; modifier."
+               source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/post/PackagingDepartment.java">
+        <error line="1" severity="error" message="Missing package-info.java file."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+        <error line="8" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="8" column="12" severity="error"
+               message="Variable &apos;random&apos; must be private and have accessor methods."
+               source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
+        <error line="9" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="9" column="9" severity="error"
+               message="Variable &apos;randomNumber&apos; must be private and have accessor methods."
+               source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
+        <error line="11" column="5" severity="error"
+               message="Class &apos;PackagingDepartment&apos; looks like designed for extension (can be subclassed), but the method &apos;getRandomThing&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;PackagingDepartment&apos; final or making the method &apos;getRandomThing&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="11" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="17" column="5" severity="error"
+               message="Class &apos;PackagingDepartment&apos; looks like designed for extension (can be subclassed), but the method &apos;getThingsCollection&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;PackagingDepartment&apos; final or making the method &apos;getThingsCollection&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="17" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="17" column="44" severity="error" message="Parameter quantityThings should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/post/ThingStatus.java">
+        <error line="4" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="5" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/post/Protector.java">
+        <error line="4" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="6" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="6" column="22" severity="error" message="Parameter thing should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="6" column="28" severity="error" message="&apos;thing&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="10" column="5" severity="error"
+               message="Class &apos;Protector&apos; looks like designed for extension (can be subclassed), but the method &apos;getThing&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Protector&apos; final or making the method &apos;getThing&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="10" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="14" column="5" severity="error"
+               message="Class &apos;Protector&apos; looks like designed for extension (can be subclassed), but the method &apos;setThing&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Protector&apos; final or making the method &apos;setThing&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+        <error line="14" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="14" column="26" severity="error" message="Parameter thing should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="14" column="32" severity="error" message="&apos;thing&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="18" column="5" severity="error"
+               message="Class &apos;Protector&apos; looks like designed for extension (can be subclassed), but the method &apos;toString&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Protector&apos; final or making the method &apos;toString&apos; static/final/abstract/empty, or adding allowed annotation for the method."
+               source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/post/Thing.java">
+        <error line="4" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="5" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="6" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="7" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="8" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="10" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="10" column="12" severity="error"
+               message="Variable &apos;name&apos; must be private and have accessor methods."
+               source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
+        <error line="11" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+        <error line="11" column="17" severity="error"
+               message="Variable &apos;thingStatus&apos; must be private and have accessor methods."
+               source="com.puppycrawl.tools.checkstyle.checks.design.VisibilityModifierCheck"/>
+        <error line="13" column="11" severity="error" message="Parameter name should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="13" column="18" severity="error" message="&apos;name&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="13" column="24" severity="error" message="Parameter thingStatus should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="13" column="36" severity="error" message="&apos;thingStatus&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="18" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="22" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="22" column="25" severity="error" message="Parameter name should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="22" column="32" severity="error" message="&apos;name&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+        <error line="26" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="30" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="30" column="32" severity="error" message="Parameter thingStatus should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+        <error line="30" column="44" severity="error" message="&apos;thingStatus&apos; hides a field."
+               source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+    </file>
+    <file name="/home/oleh/IdeaProjects/HomeWork/StreamAPI/src/main/java/com/ivanskyi/Application.java">
+        <error line="1" severity="error" message="Missing package-info.java file."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+        <error line="5" column="1" severity="error"
+               message="Utility classes should not have a public or default constructor."
+               source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+        <error line="6" column="5" severity="error" message="Missing a Javadoc comment."
+               source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+        <error line="6" column="29" severity="error" message="Parameter args should be final."
+               source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+    </file>
+</checkstyle>

@@ -10,6 +10,7 @@ import com.ivanskyi.post.PackagingDepartment;
 import com.ivanskyi.post.Protector;
 import com.ivanskyi.post.Thing;
 import com.ivanskyi.post.ThingStatus;
+
 import java.util.*;
 import java.util.stream.Collectors;
 

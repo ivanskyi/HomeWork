@@ -9,7 +9,7 @@ public class Tasks {
     List<List<Integer>> arrayListAndLinkedList = new ArrayList<>();
     ListManager listManager = new ListManager();
 
-    public void  createArrayListAndLinkedListWithOutputTimeForIt() {
+    public void createArrayListAndLinkedListWithOutputTimeForIt() {
         List<Integer> LinkedListLittleSize = listManager.createLinkedList(10000);
         List<Integer> LinkedListMiddleSize = listManager.createLinkedList(100000);
         List<Integer> LinkedListBigSize = listManager.createLinkedList(500000);
@@ -42,9 +42,9 @@ public class Tasks {
                 + simpleArrayList.getListWhereElementNotDivideOnThree());
     }
 
-    public void  initializationAndRenameSomeFruitsInList() {
+    public void initializationAndRenameSomeFruitsInList() {
         Fruits fruits = new Fruits("Lemon", "Orange", "Banana", "Orange");
-        fruits.replaceFruiteToAnotherFruite("Orange","Grapefruit");
+        fruits.replaceFruiteToAnotherFruite("Orange", "Grapefruit");
         System.out.println("Our new list with fruits : " + fruits.getFruis());
     }
 
@@ -60,7 +60,7 @@ public class Tasks {
 
     public void initializationAndDoDESCSortByComparator() {
         Set<TestComparator> comparators = new TreeSet<>();
-        int[] arguments = {55,34,76,22,5};
+        int[] arguments = {55, 34, 76, 22, 5};
 
         for (int argument : arguments) {
             comparators.add(new TestComparator(argument));

@@ -25,15 +25,15 @@ public class Bicycle {
     }
 
     public void getAllCharacteristics() {
-           System.out.println("Bicycle Characteristics: "
-                   + "\nBrand : " + bicycleBrand
-                   + "\nRudder material : " + rudder.getMaterial()
-                   + "\nWheels  brand : " + wheels.getWheelBrands() + ". "
-                   + "\nWheels  Size: "
-                   + wheels.getSizeInInch()
-                   + "\nFrame  brand: " + frame.getFrameBrands()
-                   + "\nFrame size : " + frame.getFrameSize()
-           );
+        System.out.println("Bicycle Characteristics: "
+                + "\nBrand : " + bicycleBrand
+                + "\nRudder material : " + rudder.getMaterial()
+                + "\nWheels  brand : " + wheels.getWheelBrands() + ". "
+                + "\nWheels  Size: "
+                + wheels.getSizeInInch()
+                + "\nFrame  brand: " + frame.getFrameBrands()
+                + "\nFrame size : " + frame.getFrameSize()
+        );
     }
 }
 

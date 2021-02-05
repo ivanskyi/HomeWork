@@ -2,7 +2,7 @@ package com.ivanskyi.figures.planeShapes;
 
 import com.ivanskyi.figures.planes.VertexIn2D;
 
-public class Rectangle extends PlaneShape{
+public class Rectangle extends PlaneShape {
     double width;
     double height;
 

@@ -7,18 +7,18 @@ public class SimpleArrayList {
     List<Integer> list = new ArrayList<>();
 
     public SimpleArrayList(int... values) {
-        for(Integer value : values){
+        for (Integer value : values) {
             this.add(value);
         }
     }
 
-    public void add(int value){
+    public void add(int value) {
         this.list.add(value);
     }
 
     public void deleteElementsWhichDivideOnThree() {
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(i) % 3 == 0){
+            if (list.get(i) % 3 == 0) {
                 list.remove(i);
                 i--;
             }

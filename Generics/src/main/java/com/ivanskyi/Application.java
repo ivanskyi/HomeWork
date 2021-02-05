@@ -14,7 +14,7 @@ public class Application {
         listWithWords.add("Hello");
         listWithWords.add("Pryvit");
 
-        for(String word : listWithWords.getList()){
+        for (String word : listWithWords.getList()) {
             System.out.println(word);
         }
 

@@ -2,9 +2,10 @@ package com.ivanskyi.figures.planeShapes;
 
 import com.ivanskyi.figures.planes.VertexIn2D;
 
-public class Triangle extends PlaneShape{
+public class Triangle extends PlaneShape {
     VertexIn2D secondVertex;
     VertexIn2D thirdVertex;
+
     public Triangle(VertexIn2D firstVertex, VertexIn2D secondVertex, VertexIn2D thirdVertex) {
         super(firstVertex);
         this.secondVertex = secondVertex;
@@ -13,8 +14,8 @@ public class Triangle extends PlaneShape{
 
     @Override
     public double getPerimeter() {
-        return firstVertex.getDistance(secondVertex)+secondVertex.getDistance(thirdVertex)
-                +thirdVertex.getDistance(firstVertex);
+        return firstVertex.getDistance(secondVertex) + secondVertex.getDistance(thirdVertex)
+                + thirdVertex.getDistance(firstVertex);
     }
 
     @Override
@@ -23,7 +24,7 @@ public class Triangle extends PlaneShape{
         double distanceBetweenFirstAndSecond = firstVertex.getDistance(secondVertex);
         double distanceBetweenSecondAndThird = secondVertex.getDistance(thirdVertex);
         double distanceBetweenThirdAndFirst = thirdVertex.getDistance(firstVertex);
-        return Math.sqrt((halfPerimeter*(halfPerimeter-distanceBetweenFirstAndSecond)*(halfPerimeter
-                -distanceBetweenSecondAndThird)*(halfPerimeter-distanceBetweenThirdAndFirst)));
+        return Math.sqrt((halfPerimeter * (halfPerimeter - distanceBetweenFirstAndSecond) * (halfPerimeter
+                - distanceBetweenSecondAndThird) * (halfPerimeter - distanceBetweenThirdAndFirst)));
     }
 }

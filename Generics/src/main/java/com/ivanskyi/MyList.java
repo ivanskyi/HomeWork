@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyList<T extends Comparable> {
-    private  List<T> list = new ArrayList<>();
+    private List<T> list = new ArrayList<>();
 
-    public MyList() {}
+    public MyList() {
+    }
 
     public void add(T data) {
         list.add(data);

@@ -25,14 +25,18 @@ public class Functional {
         while (true) {
             userChoice = Functional.userChoice.open();
             switch (userChoice) {
-                case stackOverFlowChoice : functional.startOverFlow();
-                break;
-                case serverChoice : functional.startServer();
-                break;
-                case outOfMemoryChoice : functional.startOutOfMemory();
-                break;
-                default : functional.exitProgram();
-                break;
+                case stackOverFlowChoice:
+                    functional.startOverFlow();
+                    break;
+                case serverChoice:
+                    functional.startServer();
+                    break;
+                case outOfMemoryChoice:
+                    functional.startOutOfMemory();
+                    break;
+                default:
+                    functional.exitProgram();
+                    break;
             }
         }
     }

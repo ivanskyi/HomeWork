@@ -27,18 +27,23 @@ public class Cisco extends Thread {
         final String postRequest = "post";
         final String putRequest = "put";
         final String deleteRequest = "delete";
-        
+
         switch (typeRequest.getName()) {
-            case getRequest : result = requestManager.get(value);
-            break;
-            case postRequest : result = requestManager.post(value);
-            break;
-            case putRequest : result = requestManager.put(value);
-            break;
-            case deleteRequest : result = requestManager.delete(value);
-            break;
-            default : throw new IllegalStateException("We can't use "
-                    + "this http type: " + typeRequest);
+            case getRequest:
+                result = requestManager.get(value);
+                break;
+            case postRequest:
+                result = requestManager.post(value);
+                break;
+            case putRequest:
+                result = requestManager.put(value);
+                break;
+            case deleteRequest:
+                result = requestManager.delete(value);
+                break;
+            default:
+                throw new IllegalStateException("We can't use "
+                        + "this http type: " + typeRequest);
         }
         return result;
     }

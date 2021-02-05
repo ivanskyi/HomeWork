@@ -1,6 +1,6 @@
 package com.ivanskyi;
 
-public class TestComparator implements Comparable<TestComparator>{
+public class TestComparator implements Comparable<TestComparator> {
     int firstArgument;
 
     public TestComparator(int firstArgument) {
@@ -9,7 +9,7 @@ public class TestComparator implements Comparable<TestComparator>{
 
     @Override
     public int compareTo(TestComparator value) {
-        return value.firstArgument - this.firstArgument ;
+        return value.firstArgument - this.firstArgument;
     }
 
     @Override
