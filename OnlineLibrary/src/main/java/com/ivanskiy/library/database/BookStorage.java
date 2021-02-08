@@ -13,7 +13,7 @@ public class BookStorage {
         allBooks.add(book);
     }
 
-    public List<Book> getAllBooks(){
+    public List<Book> getAllBooks() {
         return allBooks;
     }
 }
