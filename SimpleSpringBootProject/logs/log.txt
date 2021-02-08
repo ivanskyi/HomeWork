@@ -19,3 +19,9 @@
 2021-02-05 13:45:50.857  INFO 47540 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2021-02-05 13:45:51.100  INFO 47540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
 2021-02-05 13:45:51.118  INFO 47540 --- [main] com.ivanskiy.springboot.Application      : Started Application in 3.156 seconds (JVM running for 4.411)
+2021-02-05 15:57:57.077  INFO 53743 --- [main] c.ivanskiy.springboot.ApplicationTests   : Starting ApplicationTests using Java 11.0.9.1 on oleh-HP-250-G5-Notebook-PC with PID 53743 (started by oleh in /home/oleh/IdeaProjects/HomeWork/SimpleSpringBootProject)
+2021-02-05 15:57:57.090  INFO 53743 --- [main] c.ivanskiy.springboot.ApplicationTests   : No active profile set, falling back to default profiles: default
+2021-02-05 15:57:59.406  INFO 53743 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-05 15:58:00.071  INFO 53743 --- [main] c.ivanskiy.springboot.ApplicationTests   : Started ApplicationTests in 3.728 seconds (JVM running for 5.893)
+2021-02-05 15:58:00.946  INFO 53743 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-05 19:50:24.030  INFO 47540 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

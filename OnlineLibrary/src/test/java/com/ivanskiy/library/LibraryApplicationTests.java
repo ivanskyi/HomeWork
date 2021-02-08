@@ -1,10 +1,10 @@
-package com.ivanskiy.starter;
+package com.ivanskiy.library;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootprofileStarterApplicationTests {
+class LibraryApplicationTests {
 
     @Test
     void contextLoads() {
