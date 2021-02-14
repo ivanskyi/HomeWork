@@ -1,7 +1,9 @@
 package com.ivanskiy.library.service;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MainFunctionalImplementation implements MainFunctional{
     @Override
     public String createBook() {
