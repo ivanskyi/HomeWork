@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ivanskiy</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>rest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>rest</name>
+    <description>Project for test Jackson and Rest Template</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -21,7 +21,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -32,26 +36,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.12.1</version>
-        </dependency>
-
-
     </dependencies>
-
-
-
-
 
     <build>
         <plugins>

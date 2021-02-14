@@ -1,5 +1,4 @@
-package com.ivanskiy.demo.entity;
-
+package com.ivanskiy.rest.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -49,8 +48,6 @@ public class User {
         this.lastLoginDate = lastLoginDate;
     }
 
-
-
     public int getAccessId() {
         return accessId;
     }
@@ -74,5 +71,4 @@ public class User {
     public void addHomeworkToHomeworkToIsDone(String subject, boolean isDone) {
       homeworkToIsDone.put(subject,isDone);
     }
-
 }

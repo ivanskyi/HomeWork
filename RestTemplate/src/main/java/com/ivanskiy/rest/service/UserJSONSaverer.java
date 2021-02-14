@@ -1,7 +1,7 @@
-package com.ivanskiy.demo.service;
+package com.ivanskiy.rest.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ivanskiy.demo.entity.User;
+import com.ivanskiy.rest.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.io.FileInputStream;
@@ -38,11 +38,11 @@ public class UserJSONSaverer {
 
     public int checkIfUserFileIsSaved(User user) throws IOException {
         String filePath = "target/" + user.getName() + "file.json";
-       User userCopy = objectMapper.readValue(new FileInputStream(filePath), User.class);
-       if(user.getName().equals(userCopy.getName())) {
-           return 200;
+        User userCopy = objectMapper.readValue(new FileInputStream(filePath), User.class);
+        if(user.getName().equals(userCopy.getName())) {
+            return 200;
         } else {
-           return 0;
+           return 500;
        }
     }
 }

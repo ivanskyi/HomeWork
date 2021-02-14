@@ -1,25 +1,22 @@
-package com.ivanskiy.demo;
+package com.ivanskiy.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ivanskiy.demo.entity.User;
-import com.ivanskiy.demo.storage.HomeworkList;
+import com.ivanskiy.rest.entity.User;
+import com.ivanskiy.rest.storage.HomeworkList;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Locale;
 
 @RunWith(SpringRunner.class)
-public class TestByGetUserInfoUseEmail {
-
+public class TestGetUserInfoUseEmail {
     @Test
     public void  getUserInfoByEmail() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        String url = "http://127.0.0.1:8013/email?email=oleh@site.com";
+        String url = "http://127.0.0.1:8081/find/user/email?email=oleh@site.com";
         User user = objectMapper.readValue(new URL(url), User.class);
         Assert.assertEquals("Alex",user.getName());
         Assert.assertEquals(LocalDate.of(1212,03,17),user.getLastLoginDate());
