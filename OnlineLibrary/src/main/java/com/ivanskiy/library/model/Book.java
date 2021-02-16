@@ -1,13 +1,11 @@
-package com.ivanskiy.library.service.object;
+package com.ivanskiy.library.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import lombok.ToString;
 
+@Data
 @AllArgsConstructor
-@Setter
-@Getter
 @ToString
 public class Book {
     private long id;
@@ -15,4 +13,3 @@ public class Book {
     private String description;
     private int rate;
 }
-
