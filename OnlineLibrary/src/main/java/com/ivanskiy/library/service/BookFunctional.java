@@ -36,12 +36,16 @@ public class BookFunctional {
     }
 
     public List<Book> sortBookByGenre() {
-        List<Book> sortedList = bookStorage.getAllBook().stream().sorted((a,b)->a.getGenre().compareTo(b.getGenre())).collect(Collectors.toList());
+        List<Book> sortedList = bookStorage.getAllBook().stream()
+                .sorted((a,b)->a.getGenre().compareTo(b.getGenre()))
+                .collect(Collectors.toList());
         return sortedList;
     }
 
     public List<Author> sortBookByAuthor() {
-        List<Author> sortedList = authorStorage.getAllAuthors().stream().sorted((author, author2)->author.getFName().compareTo(author2.getFName())).collect(Collectors.toList());
+        List<Author> sortedList = authorStorage.getAllAuthors().stream()
+                .sorted((author, author2)->author.getFName().compareTo(author2.getFName()))
+                .collect(Collectors.toList());
         return sortedList;
     }
 
