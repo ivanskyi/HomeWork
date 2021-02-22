@@ -1,10 +1,13 @@
 package com.ivanskiy.library.service;
 
+import com.ivanskiy.library.model.Author;
 import com.ivanskiy.library.model.Book;
+import com.ivanskiy.library.repository.AuthorStorage;
 import com.ivanskiy.library.repository.BookStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class BookFunctional {
@@ -12,8 +15,11 @@ public class BookFunctional {
     @Autowired
     private BookStorage bookStorage;
 
-    public List<Book> createBook(long id, String title, String description, int rate) {
-        Book book = new Book(id, title, description, rate);
+    @Autowired
+    private AuthorStorage authorStorage;
+
+    public List<Book> createBook(long id, String title, String genre, String description, int rate) {
+        Book book = new Book(id, title, genre, description, rate);
         bookStorage.addBookToStorage(book);
         return bookStorage.getAllBook();
     }
@@ -30,15 +36,17 @@ public class BookFunctional {
     }
 
     public List<Book> sortBookByGenre() {
-        return bookStorage.getAllBook();
+        List<Book> sortedList = bookStorage.getAllBook().stream().sorted((a,b)->a.getGenre().compareTo(b.getGenre())).collect(Collectors.toList());
+        return sortedList;
     }
 
-    public List<Book> sortBookByAuthor() {
-        return bookStorage.getAllBook();
+    public List<Author> sortBookByAuthor() {
+        List<Author> sortedList = authorStorage.getAllAuthors().stream().sorted((author, author2)->author.getFName().compareTo(author2.getFName())).collect(Collectors.toList());
+        return sortedList;
     }
 
-    public List<Book> updateBook(int id, String title, String description, int rate) {
-        Book book = new Book(id,title,description,rate);
+    public List<Book> updateBook(int id, String title,String genre, String description, int rate) {
+        Book book = new Book(id,title, genre, description,rate);
         bookStorage.updateBookByIndex(getBookIndexById(id),book);
         return bookStorage.getAllBook();
     }

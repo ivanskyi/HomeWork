@@ -1,5 +1,6 @@
 package com.ivanskiy.library.controller;
 
+import com.ivanskiy.library.model.Author;
 import com.ivanskiy.library.model.Book;
 import com.ivanskiy.library.service.BookFunctional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,8 @@ public class BookController {
     private BookFunctional bookFunctional;
 
     @RequestMapping(value = ("book/create"), method = RequestMethod.GET)
-    public List<Book> createBook(long id, String title, String description, int rate) {
-        return bookFunctional.createBook(id, title, description, rate);
+    public List<Book> createBook(long id, String title,String genre, String description, int rate) {
+        return bookFunctional.createBook(id, title, genre, description, rate);
     }
 
     @RequestMapping(value = ("book/delete"), method = RequestMethod.GET)
@@ -30,12 +31,12 @@ public class BookController {
     }
 
     @RequestMapping(value = ("book/sort/author"), method = RequestMethod.GET)
-    public List<Book> sortBookByAuthor() {
+    public List<Author> sortBookByAuthor() {
         return bookFunctional.sortBookByAuthor();
     }
 
     @RequestMapping(value = ("book/update"), method = RequestMethod.GET)
-    public List<Book> updateBook(int id, String title, String description, int rate) {
-         return bookFunctional.updateBook(id, title, description, rate);
+    public List<Book> updateBook(int id, String title,String genre, String description, int rate) {
+         return bookFunctional.updateBook(id, title, genre, description, rate);
     }
 }
