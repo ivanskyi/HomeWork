@@ -1,6 +1,6 @@
-package com.ivanskiy.rest.entity;
+package com.ivanskiy.rest.repository.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ public class User {
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate lastLoginDate;
 
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private int accessId;
 
     private String email;

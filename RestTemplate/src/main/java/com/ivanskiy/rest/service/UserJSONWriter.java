@@ -1,7 +1,7 @@
 package com.ivanskiy.rest.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ivanskiy.rest.entity.User;
+import com.ivanskiy.rest.repository.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.io.FileInputStream;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Random;
 
 @Component
-public class UserJSONSaverer {
+public class UserJSONWriter {
 
     @Autowired
     ObjectMapper objectMapper;

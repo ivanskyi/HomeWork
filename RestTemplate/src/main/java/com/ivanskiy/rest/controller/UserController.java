@@ -1,9 +1,9 @@
 package com.ivanskiy.rest.controller;
 
-import com.ivanskiy.rest.entity.User;
-import com.ivanskiy.rest.service.UserFinder;
-import com.ivanskiy.rest.service.UserJSONSaverer;
-import com.ivanskiy.rest.storage.SchoolDB;
+import com.ivanskiy.rest.repository.entity.User;
+import com.ivanskiy.rest.service.SearchForUsers;
+import com.ivanskiy.rest.service.UserJSONWriter;
+import com.ivanskiy.rest.repository.UserDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
@@ -15,21 +15,21 @@ public class UserController {
     User user;
 
     @Autowired
-    SchoolDB schoolDB;
+    UserDatabase userDatabase;
 
     @Autowired
-    UserFinder userFinder;
+    SearchForUsers searchForUsers;
 
     @Autowired
-    UserJSONSaverer userJSONSaverer;
+    UserJSONWriter userJSONWriter;
 
     @RequestMapping(value = "find/user/email", method = RequestMethod.GET)
     public User getUserInfoByEmail(String email) {
-        return userFinder.findUserByEmail(email);
+        return searchForUsers.findUserByEmail(email);
     }
 
     @RequestMapping(value = "/new/user", method = RequestMethod.GET)
     public int addUser(String name, String surname, String email, String homework) throws IOException {
-        return userJSONSaverer.createUser(name, surname, email, homework);
+        return userJSONWriter.createUser(name, surname, email, homework);
     }
 }

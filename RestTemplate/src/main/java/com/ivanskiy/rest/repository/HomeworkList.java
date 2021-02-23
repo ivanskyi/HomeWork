@@ -1,4 +1,4 @@
-package com.ivanskiy.rest.storage;
+package com.ivanskiy.rest.repository;
 
 public enum HomeworkList {
     INTRO("Intro"),

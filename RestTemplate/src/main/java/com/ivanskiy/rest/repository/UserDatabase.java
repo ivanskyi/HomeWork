@@ -1,19 +1,19 @@
-package com.ivanskiy.rest.storage;
+package com.ivanskiy.rest.repository;
 
-import com.ivanskiy.rest.entity.User;
+import com.ivanskiy.rest.repository.entity.User;
 import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class SchoolDB {
+public class UserDatabase {
 
     static List<User> usersList;
 
     static {
         usersList = new ArrayList<>();
-        SchoolDB schoolDB = new SchoolDB();
+        UserDatabase userDatabase = new UserDatabase();
         User secondUser = new User();
         secondUser.setName("Alex");
         secondUser.setSurname("Makedonskiy");
@@ -21,7 +21,7 @@ public class SchoolDB {
         secondUser.setEmail("alex@site.com");
         secondUser.addHomeworkToHomeworkToIsDone(HomeworkList.INTRO.toString(), false);
         secondUser.addHomeworkToHomeworkToIsDone(HomeworkList.ARRAYS.toString(), true);
-        schoolDB.addUser(secondUser);
+        userDatabase.addUser(secondUser);
 
         User firstUser = new User();
         firstUser.setName("Oleh");
@@ -30,7 +30,7 @@ public class SchoolDB {
         firstUser.setEmail("oleh@site.com");
         firstUser.addHomeworkToHomeworkToIsDone(HomeworkList.INTRO.toString(), true);
         firstUser.addHomeworkToHomeworkToIsDone(HomeworkList.ARRAYS.toString(), false);
-        schoolDB.addUser(firstUser);
+        userDatabase.addUser(firstUser);
     }
 
     public void addUser(User user) {
