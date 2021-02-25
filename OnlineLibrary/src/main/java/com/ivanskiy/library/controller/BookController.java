@@ -2,7 +2,7 @@ package com.ivanskiy.library.controller;
 
 import com.ivanskiy.library.model.Author;
 import com.ivanskiy.library.model.Book;
-import com.ivanskiy.library.service.BookFunctional;
+import com.ivanskiy.library.service.book.DefaultBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,33 +10,38 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequestMapping("/book")
 public class BookController {
 
+    private final DefaultBookService defaultBookService;
+
     @Autowired
-    private BookFunctional bookFunctional;
-
-    @RequestMapping(value = ("book/create"), method = RequestMethod.GET)
-    public List<Book> createBook(long id, String title,String genre, String description, int rate) {
-        return bookFunctional.createBook(id, title, genre, description, rate);
+    public BookController(final DefaultBookService defaultBookService) {
+        this.defaultBookService = defaultBookService;
     }
 
-    @RequestMapping(value = ("book/delete"), method = RequestMethod.GET)
+    @RequestMapping(value = ("/create"), method = RequestMethod.GET)
+    public int createBook(String title,String genre, String description, int rate) {
+        return defaultBookService.createBook(title, genre, description, rate);
+    }
+
+    @RequestMapping(value = ("/delete"), method = RequestMethod.GET)
     public List<Book> deleteBook(int id) {
-        return bookFunctional.deleteBook(id);
+        return defaultBookService.deleteBook(id);
     }
 
-    @RequestMapping(value = ("book/sort/genre"), method = RequestMethod.GET)
+    @RequestMapping(value = ("/sort/genre"), method = RequestMethod.GET)
     public List<Book> sortBookByGenre() {
-        return bookFunctional.sortBookByGenre();
+        return defaultBookService.sortBookByGenre();
     }
 
-    @RequestMapping(value = ("book/sort/author"), method = RequestMethod.GET)
+    @RequestMapping(value = ("/sort/author"), method = RequestMethod.GET)
     public List<Author> sortBookByAuthor() {
-        return bookFunctional.sortBookByAuthor();
+        return defaultBookService.sortBookByAuthor();
     }
 
-    @RequestMapping(value = ("book/update"), method = RequestMethod.GET)
-    public List<Book> updateBook(int id, String title,String genre, String description, int rate) {
-         return bookFunctional.updateBook(id, title, genre, description, rate);
+    @RequestMapping(value = ("/update"), method = RequestMethod.GET)
+    public int updateBook(int id, String title,String genre, String description, int rate) {
+        return defaultBookService.updateBook(id, title, genre, description, rate);
     }
 }

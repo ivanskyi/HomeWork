@@ -1,13 +1,18 @@
 package com.ivanskiy.library.model;
 
 import lombok.Data;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class Author {
     private long id;
     private String fName;
     private String lName;
-    private Book book;
+    private List<Book> books = new ArrayList<>();
+
+    public Author() {
+    }
 
     public Author(long id, String fName, String lName) {
         this.id = id;
@@ -19,6 +24,10 @@ public class Author {
         this.id = id;
         this.fName = fName;
         this.lName = lName;
-        this.book = book;
+        this.books.add(book);
+    }
+
+    public void addBook(Book book) {
+        this.books.add(book);
     }
 }

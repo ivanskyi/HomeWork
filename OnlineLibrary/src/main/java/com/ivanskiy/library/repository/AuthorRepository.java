@@ -6,27 +6,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class AuthorStorage {
+public class AuthorRepository {
 
-    private List<Author> allAuthors = new ArrayList<>();
+    private List<Author> authors = new ArrayList<>();
 
     public void createAauthor(Author author) {
-        allAuthors.add(author);
+        authors.add(author);
     }
 
-    public List<Author> getAllAuthors() {
-        return allAuthors;
+    public List<Author> getAuthors() {
+        return authors;
     }
 
     public void updateAuthor(int index, Author author) {
-        allAuthors.set(index, author);
+        authors.set(index, author);
     }
 
     public void removeAuthor(int index) {
-        allAuthors.remove(index);
-    }
-
-    public Author getAuthorByIndex(int index) {
-        return allAuthors.get(index);
+        authors.remove(index);
     }
 }

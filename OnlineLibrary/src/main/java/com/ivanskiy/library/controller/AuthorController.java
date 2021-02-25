@@ -1,40 +1,43 @@
 package com.ivanskiy.library.controller;
 
 import com.ivanskiy.library.model.Author;
-import com.ivanskiy.library.repository.AuthorStorage;
-import com.ivanskiy.library.service.AuthorFunctional;
+import com.ivanskiy.library.repository.AuthorRepository;
+import com.ivanskiy.library.service.author.DefaultAuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.List;
 
 @RestController
+@RequestMapping("/author")
 public class AuthorController {
-    @Autowired
-    private AuthorStorage authorStorage;
+
+    private final AuthorRepository authorRepository;
+    private final DefaultAuthorService defaultAuthorService;
 
     @Autowired
-    private AuthorFunctional authorFunctional;
-
-    @RequestMapping(value = ("author/create"), method = RequestMethod.GET)
-    public List<Author> createAuthod(int id, String fName, String lName) {
-        authorFunctional.createAuthor(id, fName, lName);
-        return authorStorage.getAllAuthors();
+    public AuthorController(final AuthorRepository authorRepository, final DefaultAuthorService defaultAuthorService) {
+        this.authorRepository = authorRepository;
+        this.defaultAuthorService = defaultAuthorService;
     }
 
-    @RequestMapping(value = ("author/delete"), method = RequestMethod.GET)
-    public List<Author> deleteAuthor(int id) {
-        return authorFunctional.removeAuthor(id);
+    @RequestMapping(value = ("/create"), method = RequestMethod.GET)
+    public int createAuthod(String fName, String lName) {
+        return  defaultAuthorService.createAuthor(fName, lName);
     }
 
-    @RequestMapping(value = ("author/addbook"), method = RequestMethod.GET)
-    public List<Author> addBookToAuthor(int authorid, int bookid) {
-        return authorFunctional.addBookToAuthor(authorid, bookid);
+    @RequestMapping(value = ("/delete"), method = RequestMethod.GET)
+    public int deleteAuthor(int id) {
+        return defaultAuthorService.deleteAuthor(id);
     }
 
-    @RequestMapping(value = ("author/update"), method = RequestMethod.GET)
-    public void updateAuthor(int id, String fName, String lName) {
-        authorFunctional.updateAuthor(id, fName, lName);
+    @RequestMapping(value = ("/addBook"), method = RequestMethod.GET)
+    public Author addBookToAuthor(int authorID, int bookID) {
+        return defaultAuthorService.addBookToAuthor(authorID, bookID);
+    }
+
+    @RequestMapping(value = ("/update"), method = RequestMethod.GET)
+    public int updateAuthor(int id, String fName, String lName) {
+        return defaultAuthorService.updateAuthor(id, fName, lName);
     }
 }
