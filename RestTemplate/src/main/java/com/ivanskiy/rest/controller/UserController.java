@@ -1,35 +1,34 @@
 package com.ivanskiy.rest.controller;
 
-import com.ivanskiy.rest.repository.entity.User;
-import com.ivanskiy.rest.service.SearchForUsers;
-import com.ivanskiy.rest.service.UserJSONWriter;
-import com.ivanskiy.rest.repository.UserDatabase;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ivanskiy.rest.model.User;
+import com.ivanskiy.rest.repository.UsersRepository;
+import com.ivanskiy.rest.service.user.DefaultUserService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
+import java.time.LocalDate;
 
 @RestController
 public class UserController {
 
-    @Autowired
-    User user;
+    private User user;
+    private UsersRepository usersRepository;
+    private DefaultUserService defaultUserService;
 
-    @Autowired
-    UserDatabase userDatabase;
-
-    @Autowired
-    SearchForUsers searchForUsers;
-
-    @Autowired
-    UserJSONWriter userJSONWriter;
+    public UserController(final User user, final UsersRepository usersRepository,
+                          final DefaultUserService defaultUserService) {
+        this.user = user;
+        this.usersRepository = usersRepository;
+        this.defaultUserService = defaultUserService;
+    }
 
     @RequestMapping(value = "find/user/email", method = RequestMethod.GET)
     public User getUserInfoByEmail(String email) {
-        return searchForUsers.findUserByEmail(email);
+        return defaultUserService.findUserByEmail(email);
     }
 
-    @RequestMapping(value = "/new/user", method = RequestMethod.GET)
-    public int addUser(String name, String surname, String email, String homework) throws IOException {
-        return userJSONWriter.createUser(name, surname, email, homework);
+    @RequestMapping(value = "/new/user", method = RequestMethod.POST)
+    public ResponseEntity addUser(String name, String surname, LocalDate lastLoginDate, String email, String homework) throws IOException {
+        return defaultUserService.createUser(name, surname, lastLoginDate, email, homework);
     }
 }

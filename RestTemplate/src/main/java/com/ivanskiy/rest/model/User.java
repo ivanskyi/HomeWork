@@ -1,15 +1,18 @@
-package com.ivanskiy.rest.repository.entity;
+package com.ivanskiy.rest.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import org.springframework.stereotype.Component;
+import lombok.Data;
+import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+@Repository
+@Data
 public class User {
+
     private String name;
     private String surname;
 
@@ -20,6 +23,16 @@ public class User {
     private int accessId;
 
     private String email;
+
+    public User() {
+    }
+
+    public User(String name, String surname,LocalDate lastLoginDate,String email) {
+        this.name = name;
+        this.surname = surname;
+        this.lastLoginDate = lastLoginDate;
+        this.email = email;
+    }
 
     @JsonDeserialize()
     Map<String,Boolean> homeworkToIsDone = new HashMap<>();

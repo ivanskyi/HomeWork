@@ -1,17 +1,15 @@
 package com.ivanskiy.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ivanskiy.rest.repository.HomeworkList;
-import com.ivanskiy.rest.repository.entity.User;
+import com.ivanskiy.rest.model.User;
 import org.junit.Assert;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.testng.annotations.Test;
+import org.junit.Test;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 
 public class UserSaveProcessTest {
+    /*
     @Test
     public void getUserInfoByEmail() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -28,4 +26,6 @@ public class UserSaveProcessTest {
         String status = objectMapper.readValue(new URL(url), String.class);
         Assert.assertEquals("200", status);
     }
+    */
+
 }

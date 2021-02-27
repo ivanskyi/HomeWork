@@ -1,6 +1,6 @@
 package com.ivanskiy.rest.repository;
 
-public enum HomeworkList {
+public enum HomeworsRepository {
     INTRO("Intro"),
     ARRAYS("Arrays"),
     OBJECTS("Objects"),
@@ -9,7 +9,7 @@ public enum HomeworkList {
 
     String fullname;
 
-    HomeworkList(String fullname) {
+    HomeworsRepository(String fullname) {
         this.fullname = fullname;
     }
 }
