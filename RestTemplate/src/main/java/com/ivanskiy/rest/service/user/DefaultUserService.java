@@ -35,18 +35,22 @@ public class DefaultUserService implements UserService {
     }
 
     @Override
-    public ResponseEntity createUser(String name, String surname, LocalDate lastLoginDate,
+    public ResponseEntity createUser(String name, String surname, String lastLoginDate,
                                      String email, String homeworkList) throws IOException {
 
-        User customUser = new User(name,surname,lastLoginDate,email);
-        customUser.addHomeworkToHomeworkToIsDone(homeworkList, true);
-        customUser.setAccessId(generateAccessId());
-        saveUserinJson(customUser);
-        usersRepository.addUser(customUser);
-        if(checkIfUserFileIsSaved(customUser)) {
-            return new ResponseEntity(HttpStatus.MULTI_STATUS);
+        if(name.length() > 0 && surname.length() > 0 && lastLoginDate.length() > 0 && email.length() > 0) {
+            User customUser = new User(name, surname, LocalDate.parse(lastLoginDate), email);
+            customUser.addHomeworkToHomeworkToIsDone(homeworkList, true);
+            customUser.setAccessId(generateAccessId());
+            saveUserinJson(customUser);
+            usersRepository.addUser(customUser);
+            if (checkIfUserFileIsSaved(customUser)) {
+                return new ResponseEntity(HttpStatus.OK);
+            } else {
+                return new ResponseEntity(HttpStatus.METHOD_NOT_ALLOWED);
+            }
         } else {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
+            return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
         }
     }
 

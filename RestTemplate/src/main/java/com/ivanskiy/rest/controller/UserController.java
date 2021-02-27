@@ -6,9 +6,9 @@ import com.ivanskiy.rest.service.user.DefaultUserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
-import java.time.LocalDate;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
     private User user;
@@ -22,13 +22,13 @@ public class UserController {
         this.defaultUserService = defaultUserService;
     }
 
-    @RequestMapping(value = "find/user/email", method = RequestMethod.GET)
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
     public User getUserInfoByEmail(String email) {
         return defaultUserService.findUserByEmail(email);
     }
 
-    @RequestMapping(value = "/new/user", method = RequestMethod.POST)
-    public ResponseEntity addUser(String name, String surname, LocalDate lastLoginDate, String email, String homework) throws IOException {
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public ResponseEntity addUser(String name, String surname, String lastLoginDate, String email, String homework) throws IOException {
         return defaultUserService.createUser(name, surname, lastLoginDate, email, homework);
     }
 }
