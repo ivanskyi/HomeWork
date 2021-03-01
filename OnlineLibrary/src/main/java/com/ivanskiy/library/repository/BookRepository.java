@@ -7,26 +7,33 @@ import java.util.List;
 
 @Component
 public class BookRepository {
+    private static int id = 1;
+    private final List<Book> books = new ArrayList<>();
 
-    private List<Book> allBook = new ArrayList<>();
-
-    public void addBookToStorage(Book book) {
-        this.allBook.add(book);
+    public Book createBook(Book book) {
+        book.setId(id++);
+        this.books.add(book);
+        return book;
     }
 
-    public List<Book> getAllBook() {
-        return allBook;
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void updateBookByIndex(int id, Book book) {
-    allBook.set(id, book);
+    public Book updateBook(Book newBook) {
+        for (int i = 0; i < books.size(); i++) {
+            if(books.get(i).getId() == newBook.getId()) {
+                books.set(i,newBook);
+            }
+        }
+        return newBook;
     }
 
-    public void removeBook(int index) {
-        allBook.remove(index);
+    public void deleteBook(int id) {
+        books.removeIf(book -> book.getId() == id);
     }
 
     public Book getBookByIndex(int index) {
-        return allBook.get(index);
+        return books.get(index);
     }
 }

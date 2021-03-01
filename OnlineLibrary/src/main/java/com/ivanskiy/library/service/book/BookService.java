@@ -5,13 +5,10 @@ import com.ivanskiy.library.model.Book;
 import java.util.List;
 
 public interface BookService {
-
-    int createBook(String title, String genre, String description, int rate);
-    List<Book> deleteBook(int id);
+    Book createBook(Book book);
+    List<Book> getAll();
+    void deleteBook(int id);
     List<Book> sortBookByGenre();
     List<Author> sortBookByAuthor();
-    int updateBook(int id, String title,String genre, String description, int rate);
-    int getBookIndexById(int id);
-    int generateId();
-    boolean checkIfBookExist(int id);
+    Book updateBook(Book book);
 }

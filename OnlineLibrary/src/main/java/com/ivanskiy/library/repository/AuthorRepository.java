@@ -7,22 +7,37 @@ import java.util.List;
 
 @Component
 public class AuthorRepository {
+    private static int id = 1;
 
-    private List<Author> authors = new ArrayList<>();
+    private final List<Author> authors = new ArrayList<>();
 
-    public void createAauthor(Author author) {
+    public Author createAuthor(Author author) {
+        author.setId(id++);
         authors.add(author);
+        return author;
     }
 
     public List<Author> getAuthors() {
         return authors;
     }
 
-    public void updateAuthor(int index, Author author) {
-        authors.set(index, author);
+    public Author updateAuthor(Author newAuthor) {
+        for (int i = 0; i < authors.size(); i++) {
+            if (authors.get(i).getId() == newAuthor.getId()) {
+                authors.set(i, newAuthor);
+            }
+        }
+        return newAuthor;
     }
 
-    public void removeAuthor(int index) {
-        authors.remove(index);
+    public void removeAuthor(int id) {
+        authors.removeIf(author -> author.getId() == id);
+    }
+
+    public Author getById(long id) {
+        return authors.stream()
+                .filter(a -> a.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Author with id: " + id + " not found"));
     }
 }

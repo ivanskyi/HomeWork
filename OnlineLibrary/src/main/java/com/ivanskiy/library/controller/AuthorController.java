@@ -1,43 +1,52 @@
 package com.ivanskiy.library.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.ivanskiy.library.model.Author;
-import com.ivanskiy.library.repository.AuthorRepository;
+import com.ivanskiy.library.model.Book;
 import com.ivanskiy.library.service.author.DefaultAuthorService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/author")
 public class AuthorController {
-
-    private final AuthorRepository authorRepository;
     private final DefaultAuthorService defaultAuthorService;
 
-    @Autowired
-    public AuthorController(final AuthorRepository authorRepository, final DefaultAuthorService defaultAuthorService) {
-        this.authorRepository = authorRepository;
+    public AuthorController(DefaultAuthorService defaultAuthorService) {
         this.defaultAuthorService = defaultAuthorService;
     }
 
-    @RequestMapping(value = ("/create"), method = RequestMethod.GET)
-    public int createAuthod(String fName, String lName) {
-        return  defaultAuthorService.createAuthor(fName, lName);
+    @PostMapping("/create")
+    public Author createAuthor(@RequestBody Author author) {
+        return defaultAuthorService.createAuthor(author);
     }
 
-    @RequestMapping(value = ("/delete"), method = RequestMethod.GET)
-    public int deleteAuthor(int id) {
-        return defaultAuthorService.deleteAuthor(id);
+    @DeleteMapping("/delete/{id}")
+    public String deleteAuthor(@PathVariable int id) {
+        defaultAuthorService.deleteAuthor(id);
+        return "Author with id: " + id + " is successfully deleted";
     }
 
-    @RequestMapping(value = ("/addBook"), method = RequestMethod.GET)
-    public Author addBookToAuthor(int authorID, int bookID) {
-        return defaultAuthorService.addBookToAuthor(authorID, bookID);
+    @GetMapping("/getById/{id}")
+    public Author getById(@PathVariable long id) {
+        return defaultAuthorService.getById(id);
     }
 
-    @RequestMapping(value = ("/update"), method = RequestMethod.GET)
-    public int updateAuthor(int id, String fName, String lName) {
-        return defaultAuthorService.updateAuthor(id, fName, lName);
+    @PutMapping("/update")
+    public Author updateAuthor(@RequestBody Author author) {
+        return defaultAuthorService.updateAuthor(author);
+    }
+
+    @PostMapping("/addBook/{id}")
+    public Author addBookToAuthor(@RequestBody ObjectNode json) throws JsonProcessingException {
+        Book book = new ObjectMapper().readValue(json.get("book").toString(), Book.class);
+        return defaultAuthorService.addBookToAuthor(json.get("authorID").asInt(), book);
+    }
+
+    @GetMapping("/getAll")
+    public List<Author> getAll() {
+        return defaultAuthorService.getAll();
     }
 }

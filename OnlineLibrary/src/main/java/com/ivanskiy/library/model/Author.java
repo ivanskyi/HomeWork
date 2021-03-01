@@ -1,33 +1,43 @@
 package com.ivanskiy.library.model;
 
-import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 public class Author {
     private long id;
     private String fName;
     private String lName;
-    private List<Book> books = new ArrayList<>();
+    private final List<Long> booksId = new ArrayList<>();
 
-    public Author() {
+    public long getId() {
+        return id;
     }
 
-    public Author(long id, String fName, String lName) {
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
         this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
         this.lName = lName;
     }
 
-    public Author(long id, String fName, String lName, Book book) {
-        this.id = id;
-        this.fName = fName;
-        this.lName = lName;
-        this.books.add(book);
+    public List<Long> getBooksId() {
+        return booksId;
     }
 
-    public void addBook(Book book) {
-        this.books.add(book);
+    public void addBook(Long book) {
+        this.booksId.add(book);
     }
 }

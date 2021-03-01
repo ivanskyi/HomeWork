@@ -1,97 +1,54 @@
 package com.ivanskiy.library.service.author;
 
 import com.ivanskiy.library.model.Author;
+import com.ivanskiy.library.model.Book;
 import com.ivanskiy.library.repository.AuthorRepository;
 import com.ivanskiy.library.repository.BookRepository;
 import com.ivanskiy.library.service.book.DefaultBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import java.util.List;
 
 @Component
 public class DefaultAuthorService implements AuthorService {
-
-    private AuthorRepository authorRepository;
-    private BookRepository bookRepository;
-    private DefaultBookService defaultBookService;
+    private final AuthorRepository authorRepository;
+    private final BookRepository bookRepository;
+    private final DefaultBookService defaultBookService;
 
     @Autowired
-    public DefaultAuthorService(final AuthorRepository authorRepository, final BookRepository bookRepository, final DefaultBookService defaultBookService) {
+    public DefaultAuthorService(AuthorRepository authorRepository, BookRepository bookRepository,
+                                DefaultBookService defaultBookService) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
         this.defaultBookService = defaultBookService;
     }
 
     @Override
-    public int createAuthor(String fName, String lName) {
-        Author author = new Author(generateId(), fName, lName);
-        authorRepository.createAauthor(author);
-        if(authorRepository.getAuthors().contains(author)) {
-            return 201;
-        } else {
-            return 503;
-        }
+    public Author createAuthor(Author author) {
+        return authorRepository.createAuthor(author);
     }
 
     @Override
-    public int deleteAuthor(int id) {
-        if(existAuthor(id)) {
-            authorRepository.removeAuthor(getAuthorIndexById(id));
-            return 200;
-        } else {
-            return 204;
-        }
+    public void deleteAuthor(int id) {
+        authorRepository.removeAuthor(id);
     }
 
     @Override
-    public int updateAuthor(int id, String fName, String lName) {
-        Author author = new Author(id, fName, lName);
-        if(existAuthor(id)) {
-            authorRepository.updateAuthor(getAuthorIndexById(id), author);
-            return 200;
-        } else {
-            return 501;
-        }
+    public Author updateAuthor(Author author) {
+        return authorRepository.updateAuthor(author);
     }
 
     @Override
-    public boolean existAuthor(int id) {
-        boolean status = false;
-        for(Author author : authorRepository.getAuthors()) {
-            if(author.getId() == id) {
-                status = true;
-            } else {
-                status =  false;
-            }
-        }
-        return status;
-    }
-
-    @Override
-    public Author addBookToAuthor(int author_id, int book_id) {
-        Author author = getAuthorById(author_id);
-        author.addBook(bookRepository.getBookByIndex(defaultBookService.getBookIndexById(book_id)));
-        authorRepository.updateAuthor(getAuthorIndexById(author_id), author);
+    public Author addBookToAuthor(int authorId, Book book) {
+        Author author = getAuthorById(authorId);
+        long newBookId = bookRepository.createBook(book).getId();
+        author.addBook(newBookId);
+        authorRepository.updateAuthor(author);
         return author;
     }
 
     @Override
-    public int getAuthorIndexById(int id) {
-        int index = 0;
-        try {
-            for (int i = 0; i < authorRepository.getAuthors().size(); i++) {
-                if (id == authorRepository.getAuthors().get(i).getId()) {
-                    index = i;
-                }
-            }
-            return index;
-        } catch (IndexOutOfBoundsException exception) {
-            return 0;
-        }
-    }
-
-    @Override
     public Author getAuthorById(int id) {
-        Author author = null;
         for(Author someAuthor : authorRepository.getAuthors()) {
             if (someAuthor.getId() == id) {
                 return someAuthor;
@@ -101,13 +58,12 @@ public class DefaultAuthorService implements AuthorService {
     }
 
     @Override
-    public int generateId() {
-        int  freeId = 1;
-        for (Author author : authorRepository.getAuthors()) {
-            if (author.getId() == freeId) {
-                freeId ++;
-            }
-        }
-        return freeId;
+    public List<Author> getAll() {
+        return authorRepository.getAuthors();
+    }
+
+    @Override
+    public Author getById(long id) {
+        return authorRepository.getById(id);
     }
 }
