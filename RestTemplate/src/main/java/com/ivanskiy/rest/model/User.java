@@ -24,6 +24,9 @@ public class User {
 
     private String email;
 
+    @JsonDeserialize()
+    Map<String,Boolean> homeworkToIsDone = new HashMap<>();
+
     public User() {
     }
 
@@ -33,9 +36,6 @@ public class User {
         this.lastLoginDate = lastLoginDate;
         this.email = email;
     }
-
-    @JsonDeserialize()
-    Map<String,Boolean> homeworkToIsDone = new HashMap<>();
 
     public String getName() {
         return name;
@@ -75,10 +75,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Map<String, Boolean> getListOfHomeworkToIsDone() {
-        return homeworkToIsDone;
     }
 
     public void addHomeworkToHomeworkToIsDone(String subject, boolean isDone) {

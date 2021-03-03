@@ -19,8 +19,8 @@ public class UsersRepository {
         firstUser.setSurname("Makedonskiy");
         firstUser.setLastLoginDate(LocalDate.of(1212, 03, 17));
         firstUser.setEmail("alex@site.com");
-        firstUser.addHomeworkToHomeworkToIsDone(HomeworsRepository.INTRO.toString(), false);
-        firstUser.addHomeworkToHomeworkToIsDone(HomeworsRepository.ARRAYS.toString(), true);
+        firstUser.addHomeworkToHomeworkToIsDone(HomeworksRepository.INTRO.toString(), false);
+        firstUser.addHomeworkToHomeworkToIsDone(HomeworksRepository.ARRAYS.toString(), true);
         usersRepository.addUser(firstUser);
 
         User secondUser = new User();
@@ -28,8 +28,8 @@ public class UsersRepository {
         secondUser.setSurname("Ivanskiy");
         secondUser.setLastLoginDate(LocalDate.of(1990, 11, 1));
         secondUser.setEmail("oleh@site.com");
-        secondUser.addHomeworkToHomeworkToIsDone(HomeworsRepository.INTRO.toString(), true);
-        secondUser.addHomeworkToHomeworkToIsDone(HomeworsRepository.ARRAYS.toString(), false);
+        secondUser.addHomeworkToHomeworkToIsDone(HomeworksRepository.INTRO.toString(), true);
+        secondUser.addHomeworkToHomeworkToIsDone(HomeworksRepository.ARRAYS.toString(), false);
         usersRepository.addUser(secondUser);
     }
 
@@ -44,4 +44,12 @@ public class UsersRepository {
     public List<User> getAllUsers() {
         return users;
     }
+
+    public User findUserByEmail(String email) {
+        return users.stream()
+                .filter(a->a.getEmail().equals(email))
+                .findAny()
+                .orElse(new User());
+    }
+
 }

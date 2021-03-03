@@ -1,7 +1,6 @@
 package com.ivanskiy.rest.controller;
 
 import com.ivanskiy.rest.model.User;
-import com.ivanskiy.rest.repository.UsersRepository;
 import com.ivanskiy.rest.service.user.DefaultUserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,24 +10,21 @@ import java.io.IOException;
 @RequestMapping("/user")
 public class UserController {
 
-    private User user;
-    private UsersRepository usersRepository;
-    private DefaultUserService defaultUserService;
+    private final DefaultUserService defaultUserService;
 
-    public UserController(final User user, final UsersRepository usersRepository,
-                          final DefaultUserService defaultUserService) {
-        this.user = user;
-        this.usersRepository = usersRepository;
+    public UserController(DefaultUserService defaultUserService) {
         this.defaultUserService = defaultUserService;
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @GetMapping("/search")
+    @ResponseBody
     public User getUserInfoByEmail(String email) {
         return defaultUserService.findUserByEmail(email);
     }
 
-    @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public ResponseEntity addUser(String name, String surname, String lastLoginDate, String email, String homework) throws IOException {
-        return defaultUserService.createUser(name, surname, lastLoginDate, email, homework);
+    @PostMapping("/create")
+    @ResponseBody
+    public ResponseEntity addUser(@RequestBody User user) throws IOException {
+        return defaultUserService.createUser(user);
     }
 }

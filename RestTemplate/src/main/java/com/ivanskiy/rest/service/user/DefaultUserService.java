@@ -3,48 +3,37 @@ package com.ivanskiy.rest.service.user;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ivanskiy.rest.model.User;
 import com.ivanskiy.rest.repository.UsersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Random;
 
 @Service
 public class DefaultUserService implements UserService {
 
-    private UsersRepository usersRepository;
-    private ObjectMapper objectMapper;
+    private final UsersRepository usersRepository;
+    private final ObjectMapper objectMapper;
 
-    @Autowired
-    public DefaultUserService(final UsersRepository usersRepository, final ObjectMapper objectMapper) {
+    public DefaultUserService(UsersRepository usersRepository, ObjectMapper objectMapper) {
         this.usersRepository = usersRepository;
         this.objectMapper = objectMapper;
     }
 
     @Override
     public User findUserByEmail(String email) {
-        User user = usersRepository.getAllUsers().stream()
-                .filter(a->a.getEmail().equals(email))
-                .findAny()
-                .orElse(new User());
-        return user;
+        return usersRepository.findUserByEmail(email);
     }
 
     @Override
-    public ResponseEntity createUser(String name, String surname, String lastLoginDate,
-                                     String email, String homeworkList) throws IOException {
-
-        if(name.length() > 0 && surname.length() > 0 && lastLoginDate.length() > 0 && email.length() > 0) {
-            User customUser = new User(name, surname, LocalDate.parse(lastLoginDate), email);
-            customUser.addHomeworkToHomeworkToIsDone(homeworkList, true);
-            customUser.setAccessId(generateAccessId());
-            saveUserinJson(customUser);
-            usersRepository.addUser(customUser);
-            if (checkIfUserFileIsSaved(customUser)) {
+    public ResponseEntity createUser(User user) throws IOException {
+        if(user.getName() != null && user.getSurname() != null) {
+            user.setAccessId(generateAccessId());
+            saveUserinJson(user);
+            usersRepository.addUser(user);
+            if (checkIfUserFileIsSaved(user)) {
                 return new ResponseEntity(HttpStatus.OK);
             } else {
                 return new ResponseEntity(HttpStatus.METHOD_NOT_ALLOWED);

@@ -6,6 +6,8 @@ import com.ivanskiy.library.repository.AuthorRepository;
 import com.ivanskiy.library.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,10 +46,19 @@ public class DefaultBookService implements BookService {
     }
 
     @Override
-    public List<Author> sortBookByAuthor() {
-        return authorRepository.getAuthors().stream()
-                .sorted(Comparator.comparing(Author::getfName))
-                .collect(Collectors.toList());
+    public List<Book> sortBookByAuthor() {
+        List<Book> sortResult = new ArrayList<>();
+        for (int i = 1; i < authorRepository.getAuthors().size(); i++) {
+            List<Long> booksId = authorRepository.getById(i).getBooksId();
+            if (booksId.isEmpty()) {
+
+            } else {
+                for (int j = 1; j < booksId.size(); j++) {
+                    int bookIndex = booksId.get(j).intValue();
+                }
+            }
+        }
+        return sortResult;
     }
 
     @Override

@@ -9,6 +9,6 @@ public interface BookService {
     List<Book> getAll();
     void deleteBook(int id);
     List<Book> sortBookByGenre();
-    List<Author> sortBookByAuthor();
+    List<Book> sortBookByAuthor();
     Book updateBook(Book book);
 }

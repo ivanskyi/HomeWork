@@ -41,7 +41,7 @@ public class BookController {
     }
 
     @GetMapping("/sort/author")
-    public List<Author> sortBookByAuthor() {
+    public List<Book> sortBookByAuthor() {
         return defaultBookService.sortBookByAuthor();
     }
 }
